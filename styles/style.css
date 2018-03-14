@@ -1,1 +1,3 @@
-list p{font-style: italic}
+ul p{font-style: italic}
+body {padding:50px}
+li a.inactive {color: red}
