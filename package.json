@@ -1,0 +1,24 @@
+{
+  "name": "index-comingsoon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuangyuanw/Index-ComingSoon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuangyuanw/Index-ComingSoon/issues"
+  },
+  "homepage": "https://github.com/shuangyuanw/Index-ComingSoon#readme"
+}
