@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.use(router);
 
 app.get("styles/style.css", (req, res) => res.send("styles/style.css"))
-app.get("styles/comingsoon.css", (req, res) => res.send("comingsoon/style.css"))
+app.get("styles/comingsoon.css", (req, res) => res.send("styles/comingsoon.css"))
 
 
 app.listen(PORT, function(){
