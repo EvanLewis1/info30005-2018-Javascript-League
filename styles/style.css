@@ -1,7 +1,17 @@
+body.page {background-color: lightgreen}
+
 ul p{font-style: italic}
 body {padding:50px}
 li a.inactive {color: red}
 div.layout.menu {background-color: lightgrey}
+div.frame{float: inherit; background-color: orange; border: solid black 5px; border-radius: 25px; padding-left: 25px; padding-right :25px}
+
+/*Why page*/
+div.top {height: 400px}
+div.left {width: 50%; height: 100%; float:left}
+div.right {width: 50%; height: 100%; float:right}
+div.frame img {display: block}
+
 
 table.full {width: 100%; height: 100%}
 td {width: 14%}
