@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/style.css">
+    <script>
+        function showPopup(buttonId){
+            document.getElementById(buttonId).setAttribute("style", "visibility:visible")
+        }
+        function hidePopup(buttonId){
+            document.getElementById(buttonId).setAttribute("style", "visibility:hidden")
+        }
+
+    </script>
 </head>
 <body class = page>
 
+<div id = reduce class = "blue hidden popup">
+    <button class = close onclick = hidePopup("reduce")></button>
+</div>
+<div id = reuse class = "orange hidden popup">
+    <button class = close onclick = hidePopup('reuse')></button>
+
+</div>
+<div id = recycle class = "green hidden popup">
+    <button class = close onclick = hidePopup('recycle')></button>
+
+</div>
+
+
 <div>
     <div class="small centre">
-        <button class=how>Reuse</button>
+        <button class=how onclick = showPopup("reuse")>Reuse</button>
     </div>
 
     <div class="large centre">
-        <button class=how>Reduce</button>
+        <button class=how onclick = showPopup("reduce")>Reduce</button>
         <img src=../assets/images/Picture5.png>
-        <button class=how>Recycle</button>
+        <button class=how onclick = showPopup("recycle")>Recycle</button>
     </div>
 
 </div>
+
 
 </body>
 </html>
