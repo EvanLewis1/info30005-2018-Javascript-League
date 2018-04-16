@@ -48,6 +48,7 @@ nav.navbar-header{
     height: 0;
     visibility: hidden;
 }
+
 nav{
     display:inline-block;
     border:1px solid #505255;
@@ -56,6 +57,7 @@ nav{
     -webkit-border-radius: 5px;
     -webkit-box-shadow:1px 1px 3px #292929;
     -moz-box-shadow:1px 1px 3px #292929;
+    width: auto;
 }
 nav li{
     list-style:none;
@@ -91,6 +93,10 @@ nav li a{
 }
 nav li > a{
     position:relative;
+}
+
+nav ul{
+    width: auto;
 }
 nav li.first a{
     -moz-border-radius-topleft: 4px;
@@ -201,6 +207,9 @@ nav li:hover dt{
     -moz-transform: rotate(45deg);
 }
 
+nav{
+    dispaly: inline;
+}
 #head.secondary {
     height: 100px;
     min-height: 100px;
@@ -243,6 +252,33 @@ aside li a:hover {
 }
 
 aside ul{
+    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+}
+
+fieldset table{
+    display:table;
+    margin:0px auto;
+}
+
+
+.component{
+    max-width: 150px;
+    width:expression(document.body.clientWidth>300?"300px":"auto");
+    max-height:75px;
+    height:expression(document.body.clientHeight>300?"300px":"auto");
+    overflow:hidden;
+    margin:0 auto;
+    display:block;
+}
+
+#computer img{
+    max-width: 620px;
+    width:expression(document.body.clientWidth>400?"620px":"auto");
+    max-height:300px;
+    height:expression(document.body.clientHeight>200?"300px":"auto");
+    overflow:hidden;
+    margin:0 auto;
+    display:block;
 }
