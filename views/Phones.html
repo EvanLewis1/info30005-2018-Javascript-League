@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Where can recycle</title>
+    <title>What to e-recycling</title>
     <link rel = "stylesheet" href="../styles/style.css">
-    <link rel = "stylesheet" href="../styles/where.css">
+    <link rel = "stylesheet" href="../styles/what.css">
 </head>
+
 <body>
 <div class="header">
     <!-- Button for smallest screens -->
@@ -13,11 +14,12 @@
 </div>
 
 <nav>
+
     <ul class="clear">
         <!--li class="first"><a href="#">Home</a></li> _fcksavedurl=""#">Haha</a></li-->"
         <li>
             <span class="Darrow"></span>
-            <a href="#">What</a>
+            <a href="#">Phones</a>
             <dl>
                 <dt><span class="arrow"></span></dt>
                 <dd><a href="#">Computer</a></dd>
@@ -48,48 +50,50 @@
 
 <header id="head" class="secondary">
     <div class="container">
-        <h1>Where to recycle</h1>
+        <h1>What</h1>
     </div>
 </header>
 
 <div class="row">
-    <div class="leftcolumn">
-        <div class="card">
-            <h2>Map</h2>
-            <div id="map" style="width:100%;height:600px;"></div>
-        </div>
-    </div>
-    <div class="rightcolumn">
-        <div class="card">
-            <h2>Your Suburb: </h2>
-            <input type="text">
-            <h2>Or your post number</h2>
-            <input type="number" maxlength="6">
-        </div>
-        <div class="card">
-            <h3>The nearest recycling location:</h3>
 
+    <div class ="leftcolumn">
+        <aside>
+            <ul>
+                <li><a href="#">Computer</a></li>
+                <li><a href="#">Phones</a></li>
+                <li><a href="#">Printer</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="midcolumn">
+        <div class = "inline">
+            <img id = "phone" class = "phone" src="../assets/images/Smartphone.png">
         </div>
-        <div class="card">
-            <h3></h3>
-            <p>Found One Not In Our Database? Help Us Out</p>
-            <button type="button" class="ADD">ADD</button>
+        <div class = "inline">
+            <img id = "camera" class = "component" src="../assets/images/phone-camera.jpg">
+            <img id = "circuit-board" class = "component"src="../assets/images/phone-print-circuit-board.jpg">
+            <img id = "screen" class = "component"src="../assets/images/phone-screen.jpg">
         </div>
     </div>
+
+
+    <div>
+        <h1>Discription</h1>
+        <span>
+
+        </span>
+        <h1>Value</h1>
+        <span>
+
+        </span>
+        <h1>Hazardous</h1>
+        <span>
+
+        </span>
+    </div>
+
 </div>
 
-<script>
-    function myMap() {
-        var mapOptions = {
-            center: new google.maps.LatLng(-37.7967896,144.9581293),
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.HYBRID
-        };
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAj832WWA8O7gZc0VPIuZ7Mv62ecnbzpo&callback=myMap"></script>
 </body>
-
 </html>
