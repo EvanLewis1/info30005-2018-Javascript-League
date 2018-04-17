@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 50px;
+    background: #f1f1f1;
+}
+
 .midcolumn {
     float: left;
     width: 53%;

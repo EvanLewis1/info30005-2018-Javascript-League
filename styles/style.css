@@ -60,7 +60,7 @@ input[type=password], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
+
 
 input[type=submit] {
     width: 100%;
@@ -73,7 +73,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-=======
+
 
 input[type=submit] {
     width: 100%;
@@ -86,7 +86,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
->>>>>>> a73d2fdb8c9cb542c13f59fa342eb1c31519e522
+
 input[type=button] {
     width: 100%;
     background-color: #4c6aaf;
