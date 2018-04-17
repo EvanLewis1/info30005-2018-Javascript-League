@@ -77,3 +77,7 @@ ul li a.active{
     background-color: #2E3235;
     color: white;
 }
+
+section ul{
+    color: black;
+}
