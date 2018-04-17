@@ -1,5 +1,3 @@
-var router = require("routes/routes")
-
 const express = require('express');
 const app = express();
 
