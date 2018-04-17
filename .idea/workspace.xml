@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95f0a9a9-5062-49f6-bac3-38dc2f2ab0e8" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/views/Donation.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/views/Donation.html" afterPath="$PROJECT_DIR$/views/Donation.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-5040">
-              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+              <caret line="39" column="1" lean-forward="false" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
               <folding>
                 <element signature="e#5159#5195#0" expanded="false" />
                 <marker date="1523958288490" expanded="true" signature="7185:7229" ph="{...}" />
@@ -36,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/views/Account-setting.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="53" selection-end-column="9" />
+              <caret line="10" column="10" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="53" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -45,8 +46,8 @@
       <file leaf-file-name="Account.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/Account.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2520">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="6" column="56" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -55,9 +56,11 @@
       <file leaf-file-name="Donation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/Donation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="53" column="8" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="-1248">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,7 +191,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="158" />
     <option name="y" value="35" />
     <option name="width" value="2406" />
@@ -270,15 +273,15 @@
       <updated>1523858344278</updated>
       <workItem from="1523858346076" duration="684000" />
       <workItem from="1523859363610" duration="32028000" />
-      <workItem from="1523934821618" duration="16178000" />
+      <workItem from="1523934821618" duration="16888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48890000" />
+    <option name="totallyTimeSpent" value="49600000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="-14" width="3028" height="1938" extended-state="6" />
+    <frame x="-14" y="-14" width="3028" height="1938" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24974585" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -642,20 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5040">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-          <folding>
-            <element signature="e#5159#5195#0" expanded="false" />
-            <marker date="1523958288490" expanded="true" signature="7185:7229" ph="{...}" />
-            <marker date="1523958288490" expanded="true" signature="7275:7320" ph="{...}" />
-            <marker date="1523958288490" expanded="true" signature="7443:7487" ph="{...}" />
-            <marker date="1523958288490" expanded="true" signature="7534:7579" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/Account-setting-number.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
@@ -675,24 +664,40 @@
     <entry file="file://$PROJECT_DIR$/views/Account-setting.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="53" selection-end-column="9" />
+          <caret line="10" column="10" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="53" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5040">
+          <caret line="39" column="1" lean-forward="false" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <element signature="e#5159#5195#0" expanded="false" />
+            <marker date="1523958288490" expanded="true" signature="7185:7229" ph="{...}" />
+            <marker date="1523958288490" expanded="true" signature="7275:7320" ph="{...}" />
+            <marker date="1523958288490" expanded="true" signature="7443:7487" ph="{...}" />
+            <marker date="1523958288490" expanded="true" signature="7534:7579" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Account.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="6" column="56" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Donation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="53" column="8" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="-1248">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
