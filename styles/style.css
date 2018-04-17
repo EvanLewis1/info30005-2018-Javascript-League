@@ -32,6 +32,25 @@ button.close {width: 50px; height: 50px; border-radius: 50px; background: url(".
 nav.navbar-header{
     color: cornflowerblue;
 }
+
+body {
+    font-family: Arial;
+    padding: 50px;
+    background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
 /*login*/
 fieldset {
     border-radius: 5px;
