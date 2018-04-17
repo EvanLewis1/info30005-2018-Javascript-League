@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/how.css">
     <script>
         function showPopup(buttonId){
             document.getElementById(buttonId).setAttribute("style", "visibility:visible")
@@ -61,15 +62,17 @@
 
 <body class = page>
 
-<div id = reduce class = "blue hidden popup">
+<div id = reduce class = "orange hidden popup">
     <button class = close onclick = hidePopup("reduce")></button>
+    <span class = re_word>Reduce your generation of e-waste through smart procurement and good maintenance. </span>
 </div>
 <div id = reuse class = "orange hidden popup">
     <button class = close onclick = hidePopup('reuse')></button>
-
+    <span class = re_word>Reuse still functioning electronic equipment by donating or selling it to someone who can still use it. </span>
 </div>
-<div id = recycle class = "green hidden popup">
+<div id = recycle class = "orange hidden popup">
     <button class = close onclick = hidePopup('recycle')></button>
+    <span class = re_word>Recycle those products that cannot be repaired. To find an organization that will manage your electronics</span>
 
 </div>
 
