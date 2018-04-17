@@ -1,5 +1,3 @@
-body.page {background-color: lightgreen}
-
 ul p{font-style: italic}
 body {padding:50px}
 li a.inactive {color: red}
@@ -7,7 +5,7 @@ div.layout.menu {background-color: lightgrey}
 div.frame{float: inherit; background-color: orange; border: solid black 5px; border-radius: 25px; padding-left: 25px; padding-right :25px}
 
 /*Why page*/
-div.top {height: 400px}
+div.top {height: 400px; margin}
 div.left {width: 50%; height: 100%; float:left}
 div.right {width: 50%; height: 100%; float:right}
 div.frame img {display: block}
@@ -60,7 +58,6 @@ input[type=password], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
 
 input[type=submit] {
     width: 100%;
@@ -73,7 +70,6 @@ input[type=submit] {
     cursor: pointer;
 }
 
-=======
 
 input[type=submit] {
     width: 100%;
@@ -86,7 +82,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
->>>>>>> a73d2fdb8c9cb542c13f59fa342eb1c31519e522
+
 input[type=button] {
     width: 100%;
     background-color: #4c6aaf;
