@@ -326,10 +326,10 @@ fieldset table{
 
 
 .component{
-    max-width: 150px;
-    width:expression(document.body.clientWidth>300?"300px":"auto");
-    max-height:75px;
-    height:expression(document.body.clientHeight>300?"300px":"auto");
+    max-width: 200px;
+    width:expression(document.body.clientWidth>200?"200px":"auto");
+    max-height:200px;
+    height:expression(document.body.clientHeight>200?"200px":"auto");
     overflow:hidden;
     margin:0 auto;
     display:block;
