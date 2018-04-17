@@ -5,7 +5,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(router);
+app.use(express.static('public'));
 /*
 app.get("styles/style.css", (req, res) => res.send("styles/style.css"))
 
