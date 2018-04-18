@@ -1,20 +1,42 @@
 document.write(`
 
-<div id = includedContent></div>
+<nav>
+    <ul class="clear">
+        <!--li class="first"><a href="#">Home</a></li> _fcksavedurl=""#">Haha</a></li-->"
+        <li>
+            <span class="Darrow"></span>
+            <a href="./What.html">What</a>
+            <dl>
+                <dt><span class="arrow"></span></dt>
+                <dd><a href="./What.html">Computer</a></dd>
+                <dd><a href="./Phones.html">Phone</a></dd>
 
-<div class = "layout menu">
-    <table class = full><tr>
-        <td class = active><a>Why</a></td>
-        <td><a>What</a></td>
-        <td><a>Where</a></td>
-        <td><a>How</a></td>
-        <td><a>Protect Yourself</a></td>
-        <td><a>Pickup Service</a></td>
-        <td><a>Login/Signup</a></td>
-    </tr>
-    </table>
-</div>
+                <dd><a href="./printer.html">Printer</a></dd>
 
+                <dd><a href="#">Printer</a></dd>
+
+            </dl>
+        </li>
+        <li><a href="./why.html">Why</a></li>
+        <li>
+            <a href="./Where.html">Where</a>
+        </li>
+        <li>
+            <span class="Darrow"></span>
+            <a href="./index.html">How</a>
+
+            <dl>
+                <dt><span class="arrow"></span></dt>
+                <dd><a href="#">Pick up</a></dd>
+                <dd><a href="Donation.html">Give it away</a></dd>
+                <dd><a href="#">Recycling</a></dd>
+            </dl>
+        </li>
+        <li><a href="#">Pickup Service</a></li>
+        <li><a href="./Personal_privacy.html">Information Privacy</a></li>
+        <li class="last"><a href="./Login.html">Login/Account</a></li>
+    </ul>
+</nav>
 
 
 `)
