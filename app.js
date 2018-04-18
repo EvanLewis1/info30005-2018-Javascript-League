@@ -5,7 +5,9 @@ const PORT = process.env.PORT || 3000;
 
 
 app.use(express.static('views'));
-app.use(express.static('style'));
+app.use('/styles', express.static('styles'));
+app.use('/assets/images', express.static('assets/images'));
+
 
 app.listen(PORT, function(){
     console.log(`Express listening on port ${PORT}`);
