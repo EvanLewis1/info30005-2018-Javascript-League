@@ -9,6 +9,7 @@ router.get('/', function(req, res) {
     res.send(path.join(__dirname, 'views/index.html'));
 });
 
-
-
+router.get('/Account', function(req, res) {
+    res.send(path.join(__dirname, 'views/Account.html'));
+});
 module.exports = router;
