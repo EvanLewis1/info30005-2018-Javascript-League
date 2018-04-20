@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>What to e-recycling</title>
-    <link rel = "stylesheet" href="../styles/style.css">
-    <link rel = "stylesheet" href="../styles/what.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/what.css">
+
+    <script>
+        devices = [
+            {
+                name: "phone", src: "../assets/images/Smartphone.png",
+                components: [
+                    {name: "camera", src: "../assets/images/phone-camera.jpg"},
+                    {name: "circuit board", src: "../assets/images/phone-print-circuit-board.jpg"},
+                    {name: "screen", src: "../assets/images/phone-screen.jpg"},
+                ]
+            },
+            {
+                name: "computer", src: "../assets/images/picture-computer.jpg",
+                components: [
+                    {name: "mainboard", src: "../assets/images/picture-mainboard.jpg"},
+                    {name: "cpu", src: "../assets/images/cpu.jpg"},
+                    {name: "monitor", src: "../assets/images/picture-monitor.jpg"},
+                ]
+            },
+            {
+                name: "printer", src: "../assets/images/printer1.jpg",
+                components: [
+                    {name: "ink", src: "../assets/images/printer2.jpeg"},
+                    {name: "toner", src: "../assets/images/printer3.jpg"},
+
+                ]
+
+            },
+        ]
+        ;
+
+        function selectDevice(i) {
+            document.getElementById("device").setAttribute("src", devices[i].src)
+
+
+            var components = document.getElementById("components")
+            components.innerHTML = ''
+            var image
+            devices[i].components.forEach(function(component){
+
+                image = document.createElement("img")
+                image.src = component.src
+
+                components.appendChild(image)
+
+            })
+        }
+
+    </script>
+
 </head>
 
 <body>
@@ -13,41 +63,7 @@
     <h1>E-RECYCLING</h1>
 </div>
 
-<nav>
-
-
-
-    <ul class="clear">
-        <!--li class="first"><a href="#">Home</a></li> _fcksavedurl=""#">Haha</a></li-->"
-        <li>
-            <span class="Darrow"></span>
-            <a href="./What.html">What</a>
-            <dl>
-                <dt><span class="arrow"></span></dt>
-                <dd><a href="./What.html">Computer</a></dd>
-                <dd><a href="./Phones.html">Phone</a></dd>
-                <dd><a href="./printer.html">Printer</a></dd>
-            </dl>
-        </li>
-        <li><a href="./why.html">Why</a></li>
-        <li>
-            <a href="./Where.html">Where</a>
-        </li>
-        <li>
-            <span class="Darrow"></span>
-            <a href="index.html">How</a>
-            <dl>
-                <dt><span class="arrow"></span></dt>
-                <dd><a href="#">Pick up</a></dd>
-                <dd><a href="Donation.html">Give it away</a></dd>
-                <dd><a href="#">Recycling</a></dd>
-            </dl>
-        </li>
-        <li><a href="#">Pickup Service</a></li>
-        <li><a href="./Personal_privacy.html">Information Privacy</a></li>
-        <li class="last"><a href="./Login.html">Login/Account</a></li>
-    </ul>
-</nav>
+<script src=layout.js></script>
 
 <header id="head" class="secondary">
     <div class="container">
@@ -57,45 +73,43 @@
 
 <div class="row">
 
-    <div class ="leftcolumn">
+    <div class="leftcolumn">
         <aside>
             <ul>
-                <li><a href="./What.html">Computer</a></li>
-                <li><a href="./Phones.html">Phones</a></li>
-                <li><a href="./printer.html">Printer</a></li>
+                <li><a onclick=selectDevice(0)>Computer</a></li>
+                <li><a onclick=selectDevice(1)>Phones</a></li>
+                <li><a onclick=selectDevice(2)>Printer</a></li>
             </ul>
         </aside>
     </div>
 
     <div class="midcolumn">
-        <div class = "inline">
-            <img id = "computer" class = "computer"src="../assets/images/Picture-computer.jpg">
+        <div class="inline">
+            <img id="device" src=#>
         </div>
-        <div class = "inline">
-            <img id = "mainboard" class = "component" src="../assets/images/picture-mainboard.jpg">
-            <img id = "cpu" class = "component"src="../assets/images/cpu.jpg">
-            <img id = "monitor" class = "component"src="../assets/images/picture-monitor.jpg">
+        <div id = components class="inline">
+
         </div>
     </div>
 
 
-    <div class = rightcolumn>
-        <div class = "card">
-             <h1>Main Components</h1>
-             <span>
+    <div class=rightcolumn>
+        <div class="card">
+            <h1>Main Components</h1>
+            <span>
                 Monitors, resistors, circuit board
              </span>
         </div>
         <div class="card">
-        <h1>Description</h1>
-        <span>
+            <h1>Description</h1>
+            <span>
             The central processing unit in a computer contains toxic substances, and lead is found in circuit boards. Metal plates and housings may contain chromium, which is used to harden and protect metal plates from corrosion. Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. Circuit boards, switches and relays contain mercury as well chromium. Brominated flame retardants are used in many components, including circuit boards and plastic casings.
         </span>
         </div>
 
-        <div class = "card">
-        <h1>Hazardous</h1>
-        <span>
+        <div class="card">
+            <h1>Hazardous</h1>
+            <span>
             Highly possible to be a Cancerogenic substance. It would cause lung injury, kidney disease and brittle bones. If it enters human bodies, the bodies will have strong allergic reaction and asthmatic bronchitis, and even cause DNA damage.
         </span>
         </div>
