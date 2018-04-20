@@ -3,10 +3,10 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-app.use(router)
-app.use(express.static('public'));
 
-app.use("/", function(req, res){res.send("views/index.html")})
+app.use(express.static('views'));
+app.use('/styles', express.static('styles'));
+app.use('/assets/images', express.static('assets/images'));
 
 
 app.listen(PORT, function(){
