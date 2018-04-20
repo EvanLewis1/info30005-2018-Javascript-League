@@ -1,21 +1,16 @@
 document.write(`
+<div class="header">
+    <!-- Button for smallest screens -->
+    <h1>E-RECYCLING</h1>
+</div>
+
+
 
 <nav>
     <ul class="clear">
-        <!--li class="first"><a href="#">Home</a></li> _fcksavedurl=""#">Haha</a></li-->"
+        <!--li class="first"><a href="#">Home</a></li> _fcksavedurl=""#">Haha</a></li-->
         <li>
-            <span class="Darrow"></span>
             <a href="./What.html">What</a>
-            <dl>
-                <dt><span class="arrow"></span></dt>
-                <dd><a href="./What.html">Computer</a></dd>
-                <dd><a href="./Phones.html">Phone</a></dd>
-
-                <dd><a href="./printer.html">Printer</a></dd>
-
-                <dd><a href="#">Printer</a></dd>
-
-            </dl>
         </li>
         <li><a href="./why.html">Why</a></li>
         <li>

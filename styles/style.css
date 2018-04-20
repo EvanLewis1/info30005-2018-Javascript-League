@@ -324,6 +324,14 @@ fieldset table{
     margin:0px auto;
 }
 
+#device{
+    width: 400px;
+}
+
+.component{
+    width: 200px;
+}
+
 /*
 .component{
     max-width: 200px;

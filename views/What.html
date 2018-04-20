@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>What to e-recycling</title>
+    <title>E-Waste</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/what.css">
 
@@ -19,7 +19,7 @@
                 src: "../assets/images/Smartphone.png",
                 components: [
                     {
-                        name: "camera",
+                        name: "Camera",
                         src: "../assets/images/phone-camera.jpg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -27,7 +27,7 @@
                         ]
                     },
                     {
-                        name: "circuit board",
+                        name: "Circuit board",
                         src: "../assets/images/phone-print-circuit-board.jpg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -35,7 +35,7 @@
                         ]
                     },
                     {
-                        name: "screen",
+                        name: "Screen",
                         src: "../assets/images/phone-screen.jpg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -48,19 +48,22 @@
             //Computer
             {
 
-                name: "computer",
+                name: "Computer",
                 src: "../assets/images/picture-computer.jpg",
                 components: [
                     {
-                        name: "mainboard",
+                        name: "Mainboard",
                         src: "../assets/images/picture-mainboard.jpg",
                         qualities: [
-                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {
+                                title: "Hazardous", text: `The central processing unit in a computer contains toxic substances, and lead is found in circuit boards. Metal plates and housings may contain chromium, which is used to harden and protect metal plates from corrosion. Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. Circuit boards, switches and relays contain mercury as well chromium. Brominated flame retardants are used in many components, including circuit boards and plastic casings.
+                                        Highly possible to be a Carcinogenic substance. It would cause lung injury, kidney disease and brittle bones. If it enters human bodies, the bodies will have strong allergic reaction and asthmatic bronchitis, and even cause DNA damage.`
+                            },
                             {title: "Expensive", text: "Blah Blah Blah..."},
                         ]
                     },
                     {
-                        name: "cpu",
+                        name: "Cpu",
                         src: "../assets/images/cpu.jpg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -68,7 +71,7 @@
                         ]
                     },
                     {
-                        name: "monitor",
+                        name: "Monitor",
                         src: "../assets/images/picture-monitor.jpg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -78,11 +81,11 @@
                 ]
             },
             {
-                name: "printer",
+                name: "Printer",
                 src: "../assets/images/printer1.jpg",
                 components: [
                     {
-                        name: "ink",
+                        name: "Ink",
                         src: "../assets/images/printer2.jpeg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -90,7 +93,7 @@
                         ]
                     },
                     {
-                        name: "toner",
+                        name: "Toner",
                         src: "../assets/images/printer3.jpg",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
@@ -105,6 +108,7 @@
 
 
         function selectDevice(i) {
+            document.getElementById("pleaseSelect").setAttribute("style", "visibility:hidden")
             document.getElementById("device").setAttribute("src", devices[i].src)
 
 
@@ -114,27 +118,22 @@
             devices[i].components.forEach(function (component) {
 
                 image = document.createElement("img")
+                image.setAttribute("class", "component")
                 image.src = component.src
                 image.onclick = selectComponent.bind(null, component)
 
                 components.appendChild(image)
-
-
-
-
-
-
             })
         }
 
-        function selectComponent(component){
+        function selectComponent(component) {
             var qualities = document.getElementById("qualities")
             qualities.innerHTML = ""
             var componentHeader = document.createElement("h1")
             componentHeader.innerText = component.name
             qualities.appendChild(componentHeader)
 
-            component.qualities.forEach(function(quality){
+            component.qualities.forEach(function (quality) {
 
 
                 var componentHeader = document.createElement("h1")
@@ -154,16 +153,11 @@
         }
 
 
-
     </script>
 
 </head>
 
 <body>
-<div class="header">
-    <!-- Button for smallest screens -->
-    <h1>E-RECYCLING</h1>
-</div>
 
 <script src=layout.js></script>
 
@@ -173,21 +167,24 @@
     </div>
 </header>
 
+
 <div class="row">
 
     <div class="leftcolumn">
         <aside>
             <ul>
-                <li><a onclick=selectDevice(0)>Computer</a></li>
-                <li><a onclick=selectDevice(1)>Phones</a></li>
-                <li><a onclick=selectDevice(2)>Printer</a></li>
+                <li><a class=device onclick=selectDevice(0)>Computer</a></li>
+                <li><a class=device onclick=selectDevice(1)>Phones</a></li>
+                <li><a class=device onclick=selectDevice(2)>Printer</a></li>
             </ul>
         </aside>
     </div>
 
     <div class="midcolumn">
+        <h1 id=pleaseSelect>SELECT A DEVICE</h1>
+
         <div class="inline">
-            <img id="device" src=#>
+            <img id="device" src="">
         </div>
         <div id=components class="inline">
 
@@ -196,28 +193,9 @@
     </div>
 
 
-    <div id = qualities class=rightcolumn>
+    <div id=qualities class=rightcolumn>
         <!-- Component details will be placed here by javascript-->
 
-       <!-- <div class="card">
-            <h1>Main Components</h1>
-            <span>
-                Monitors, resistors, circuit board
-             </span>
-        </div>
-        <div class="card">
-            <h1>Description</h1>
-            <span>
-            The central processing unit in a computer contains toxic substances, and lead is found in circuit boards. Metal plates and housings may contain chromium, which is used to harden and protect metal plates from corrosion. Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. Circuit boards, switches and relays contain mercury as well chromium. Brominated flame retardants are used in many components, including circuit boards and plastic casings.
-        </span>
-        </div>
-
-        <div class="card">
-            <h1>Hazardous</h1>
-            <span>
-            Highly possible to be a Cancerogenic substance. It would cause lung injury, kidney disease and brittle bones. If it enters human bodies, the bodies will have strong allergic reaction and asthmatic bronchitis, and even cause DNA damage.
-        </span>
-        </div>-->
     </div>
 
 </div>
