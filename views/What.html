@@ -7,34 +7,102 @@
     <link rel="stylesheet" href="../styles/what.css">
 
     <script>
+
+        //DEVICE DATA
+
+        //List of devices
         devices = [
+            //PHONE
+
             {
-                name: "phone", src: "../assets/images/Smartphone.png",
+                name: "phone",
+                src: "../assets/images/Smartphone.png",
                 components: [
-                    {name: "camera", src: "../assets/images/phone-camera.jpg"},
-                    {name: "circuit board", src: "../assets/images/phone-print-circuit-board.jpg"},
-                    {name: "screen", src: "../assets/images/phone-screen.jpg"},
+                    {
+                        name: "camera",
+                        src: "../assets/images/phone-camera.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
+                    {
+                        name: "circuit board",
+                        src: "../assets/images/phone-print-circuit-board.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
+                    {
+                        name: "screen",
+                        src: "../assets/images/phone-screen.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
+                ]
+            },
+
+            //Computer
+            {
+
+                name: "computer",
+                src: "../assets/images/picture-computer.jpg",
+                components: [
+                    {
+                        name: "mainboard",
+                        src: "../assets/images/picture-mainboard.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
+                    {
+                        name: "cpu",
+                        src: "../assets/images/cpu.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
+                    {
+                        name: "monitor",
+                        src: "../assets/images/picture-monitor.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
                 ]
             },
             {
-                name: "computer", src: "../assets/images/picture-computer.jpg",
+                name: "printer",
+                src: "../assets/images/printer1.jpg",
                 components: [
-                    {name: "mainboard", src: "../assets/images/picture-mainboard.jpg"},
-                    {name: "cpu", src: "../assets/images/cpu.jpg"},
-                    {name: "monitor", src: "../assets/images/picture-monitor.jpg"},
-                ]
-            },
-            {
-                name: "printer", src: "../assets/images/printer1.jpg",
-                components: [
-                    {name: "ink", src: "../assets/images/printer2.jpeg"},
-                    {name: "toner", src: "../assets/images/printer3.jpg"},
+                    {
+                        name: "ink",
+                        src: "../assets/images/printer2.jpeg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
+                    {
+                        name: "toner",
+                        src: "../assets/images/printer3.jpg",
+                        qualities: [
+                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Expensive", text: "Blah Blah Blah..."},
+                        ]
+                    },
 
                 ]
 
             },
         ]
-        ;
+
 
         function selectDevice(i) {
             document.getElementById("device").setAttribute("src", devices[i].src)
@@ -43,15 +111,49 @@
             var components = document.getElementById("components")
             components.innerHTML = ''
             var image
-            devices[i].components.forEach(function(component){
+            devices[i].components.forEach(function (component) {
 
                 image = document.createElement("img")
                 image.src = component.src
+                image.onclick = selectComponent.bind(null, component)
 
                 components.appendChild(image)
 
+
+
+
+
+
             })
         }
+
+        function selectComponent(component){
+            var qualities = document.getElementById("qualities")
+            qualities.innerHTML = ""
+            var componentHeader = document.createElement("h1")
+            componentHeader.innerText = component.name
+            qualities.appendChild(componentHeader)
+
+            component.qualities.forEach(function(quality){
+
+
+                var componentHeader = document.createElement("h1")
+                qualityElement = document.createElement("div")
+                qualityElement.setAttribute("class", "card")
+
+                var textElement = document.createElement("p")
+                textElement.innerText = quality.text
+                var titleElement = document.createElement("h1")
+                titleElement.innerText = quality.title
+
+                qualityElement.appendChild(titleElement)
+                qualityElement.appendChild(textElement)
+
+                qualities.appendChild(qualityElement)
+            })
+        }
+
+
 
     </script>
 
@@ -87,14 +189,17 @@
         <div class="inline">
             <img id="device" src=#>
         </div>
-        <div id = components class="inline">
+        <div id=components class="inline">
 
+            <!-- Component images will be placed here by javascript-->
         </div>
     </div>
 
 
-    <div class=rightcolumn>
-        <div class="card">
+    <div id = qualities class=rightcolumn>
+        <!-- Component details will be placed here by javascript-->
+
+       <!-- <div class="card">
             <h1>Main Components</h1>
             <span>
                 Monitors, resistors, circuit board
@@ -112,7 +217,7 @@
             <span>
             Highly possible to be a Cancerogenic substance. It would cause lung injury, kidney disease and brittle bones. If it enters human bodies, the bodies will have strong allergic reaction and asthmatic bronchitis, and even cause DNA damage.
         </span>
-        </div>
+        </div>-->
     </div>
 
 </div>
