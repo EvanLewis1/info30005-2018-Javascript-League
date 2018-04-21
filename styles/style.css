@@ -8,7 +8,10 @@ div.frame{float: inherit; background-color: orange; border: solid black 5px; bor
 div.top {height: 400px; }
 div.left {width: 50%; height: 100%; float:left}
 div.right {width: 50%; height: 100%; float:right}
-div.frame img {display: block}
+div.frame img {display: block; width :400px;}
+div.left h1 {text-align: center}
+div.right h1{text-align: center}
+
 
 
 table.full {width: 100%; height: 100%}
@@ -16,6 +19,7 @@ td {width: 14%}
 td.active {background-color: orange}
 
 
+/*How page*/
 button.how {width: 50px; height: 50px; border-radius: 50px}
 div.centre { margin: auto}
 div.small {width: 50px}
