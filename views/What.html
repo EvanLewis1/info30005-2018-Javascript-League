@@ -16,7 +16,7 @@
 
             {
                 name: "phone",
-                src: "../assets/images/Smartphone.png",
+                src: "../assets/images/phone.png",
                 components: [
                     {
                         name: "Camera",
@@ -28,7 +28,7 @@
                     },
                     {
                         name: "Circuit board",
-                        src: "../assets/images/phone-print-circuit-board.jpg",
+                        src: "../assets/images/circuit-board.png",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
                             {title: "Expensive", text: "Blah Blah Blah..."},
@@ -36,7 +36,7 @@
                     },
                     {
                         name: "Screen",
-                        src: "../assets/images/phone-screen.jpg",
+                        src: "../assets/images/Screen.png",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
                             {title: "Expensive", text: "Blah Blah Blah..."},
@@ -49,14 +49,14 @@
             {
 
                 name: "Computer",
-                src: "../assets/images/picture-computer.jpg",
+                src: "../assets/images/computer.png",
                 components: [
                     {
                         name: "Mainboard",
-                        src: "../assets/images/picture-mainboard.jpg",
+                        src: "../assets/images/motherboard.png",
                         qualities: [
                             {
-                                title: "Hazardous", text: `The central processing unit in a computer contains toxic substances, and lead is found in circuit boards. Metal plates and housings may contain chromium, which is used to harden and protect metal plates from corrosion. Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. Circuit boards, switches and relays contain mercury as well chromium. Brominated flame retardants are used in many components, including circuit boards and plastic casings.
+                                title: "Hazardous", text: `Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. Circuit boards, switches and relays contain mercury as well chromium. Brominated flame retardants are used in many components, including circuit boards and plastic casings.
                                         Highly possible to be a Carcinogenic substance. It would cause lung injury, kidney disease and brittle bones. If it enters human bodies, the bodies will have strong allergic reaction and asthmatic bronchitis, and even cause DNA damage.`
                             },
                             {title: "Expensive", text: "Blah Blah Blah..."},
@@ -64,15 +64,15 @@
                     },
                     {
                         name: "Cpu",
-                        src: "../assets/images/cpu.jpg",
+                        src: "../assets/images/cpu.png",
                         qualities: [
-                            {title: "Hazardous", text: "Blah Blah Blah..."},
+                            {title: "Hazardous", text: "The central processing unit in a computer contains toxic substances, and lead is found in circuit boards. Metal plates and housings may contain chromium, which is used to harden and protect metal plates from corrosion. "},
                             {title: "Expensive", text: "Blah Blah Blah..."},
                         ]
                     },
                     {
                         name: "Monitor",
-                        src: "../assets/images/picture-monitor.jpg",
+                        src: "../assets/images/picture-monitor.png",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
                             {title: "Expensive", text: "Blah Blah Blah..."},
@@ -80,13 +80,14 @@
                     },
                 ]
             },
+            // Printer
             {
                 name: "Printer",
-                src: "../assets/images/printer1.jpg",
+                src: "../assets/images/printer.png",
                 components: [
                     {
                         name: "Ink",
-                        src: "../assets/images/printer2.jpeg",
+                        src: "../assets/images/printer3.png",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
                             {title: "Expensive", text: "Blah Blah Blah..."},
@@ -94,7 +95,7 @@
                     },
                     {
                         name: "Toner",
-                        src: "../assets/images/printer3.jpg",
+                        src: "../assets/images/toner.png",
                         qualities: [
                             {title: "Hazardous", text: "Blah Blah Blah..."},
                             {title: "Expensive", text: "Blah Blah Blah..."},
@@ -173,8 +174,8 @@
     <div class="leftcolumn">
         <aside>
             <ul>
-                <li><a class=device onclick=selectDevice(0)>Computer</a></li>
-                <li><a class=device onclick=selectDevice(1)>Phones</a></li>
+                <li><a class=device onclick=selectDevice(1)>Computer</a></li>
+                <li><a class=device onclick=selectDevice(0)>Phones</a></li>
                 <li><a class=device onclick=selectDevice(2)>Printer</a></li>
             </ul>
         </aside>
