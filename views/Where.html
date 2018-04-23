@@ -49,9 +49,19 @@
         var mapOptions = {
             center: new google.maps.LatLng(-37.7967896,144.9581293),
             zoom: 10,
-            mapTypeId: google.maps.MapTypeId.HYBRID
+            mapTypeId: google.maps.MapTypeId.MAP
         };
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(-37.7967896,144.9581293),
+            map: map,
+            icon: {
+                url: "../assets/images/bin.png",
+                scaledSize: new google.maps.Size(50, 50),
+                 },
+            title: 'Hello World!'
+        });
     }
 </script>
 
