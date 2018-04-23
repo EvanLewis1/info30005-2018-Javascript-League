@@ -8,7 +8,7 @@ window.onload = function(){
             link = links[i]
             //if (link.getAttribute("href") == window.location){
             if (window.location.href.indexOf(link.getAttribute("href").substring(1)) != -1){
-                link.setAttribute("class", "selected")
+                link.setAttribute("class", "selected layoutlink")
             }
         }
     }
