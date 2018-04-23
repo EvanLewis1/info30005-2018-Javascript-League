@@ -6,6 +6,9 @@ div.frame{float: inherit; background-color: orange; border: solid black 5px; bor
 
 a.selected {background-color: #00B7FF}
 
+nav ul li {width: 170px}
+
+
 /*Why page*/
 div.top {height: 400px; }
 div.left {width: 50%; height: 100%; float:left}
@@ -22,18 +25,20 @@ td.active {background-color: orange}
 
 
 /*How page*/
-button.how {width: 50px; height: 50px; border-radius: 50px}
-div.centre { margin: auto}
+button.how {width: 100px; height: 100px; border-radius: 100px; border: 2px solid blue}
+div.centre {margin: auto}
 div.small {width: 50px}
-div.large {width : 435px}
+div.large {width : 535px}
+.re_word {padding-left: 50px; padding-right: 50px; display: block}
 
-div.popup {position: absolute; width: 500px; height: 500px; left: 300px; background-color: blue; border-radius: 10px}
+div.popup {position: absolute; width: 700px; height: 500px; left: 300px; background-color: blue; border-radius: 10px}
 div.hidden {visibility: hidden;}
 div.green{background-color: green}
 div.orange{background-color: orange}
 div.blue {background-color: blue}
+div.red {background-color: red}
 
-button.close {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px}
+button.close {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
 
 nav.navbar-header{
     color: cornflowerblue;
