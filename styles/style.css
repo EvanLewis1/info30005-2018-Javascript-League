@@ -51,6 +51,7 @@ body {
 
 /* Header/Blog Title */
 
+/*
 .header {
     padding: 30px;
     text-align: center;
@@ -59,7 +60,7 @@ body {
 
 .header h1 {
     font-size: 50px;
-}
+}*/
 
 /*login*/
 fieldset {
@@ -141,6 +142,8 @@ nav li{
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(2%, #555D5F), color-stop(50%, #555D5F),to(#3E4245));*/
     background:#555D5F;
 }
+
+
 nav li:hover{
     /*background: -moz-linear-gradient(top, #fff, #3E4245 2% ,#555D5F 80%,#555D5F 100%);
     background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), color-stop(2%, #3E4245), color-stop(80%, #3E4245),to(#555D5F));*/
@@ -148,6 +151,7 @@ nav li:hover{
     -moz-transition: background 1s ease-out;
     -webkit-transition: background 1s ease-out;
 }
+
 nav li a{
     display:block;
     height:40px;
@@ -335,6 +339,98 @@ fieldset table{
     margin:0px auto;
 }
 
+
+
+/*nav*/
+.navbar-toggle {
+    background-color: rgba(0, 0, 0, 0.89);
+}
+.navbar-nav>li>a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400 !important;
+}
+.navbar-inverse .navbar-brand img {
+    width: 171px;
+}
+
+.navbar-inverse {
+    background: #fff;
+    margin: 0 auto;
+}
+.navbar-inverse {
+    border: none;
+}
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+    color: #B8B8B8;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .active > a{
+    background: #3d84e6;
+    color: #fff !important;
+    border-radius: 0px;
+}
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+    text-align: left;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover{
+    color: #fff !important;
+    border-radius: 0px;
+    background: #3d84e6;
+}
+
+nav#filter {
+    margin-bottom: 1.5em;
+}
+nav#filter li {
+    display: inline-block;
+    margin: 10px;
+}
+nav#filter a {
+    padding: 4px 12px;
+    line-height: 20px;
+    border: 1px solid #3d84e6;
+    text-decoration: none;
+    color: #3d84e6;
+    border-left: 0px;
+    border-right: 0px;
+}
+nav#filter a.current {
+    background: #3d84e6;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse ul {
+        text-align: right;
+        margin-right: 0px;
+    }
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) {
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+    #head.secondary {
+        height: 157px !important;
+    }
+
+    #camera_wrap_4, #head {
+        height: 480px !important;
+    }
+
+    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+        font-size: 13px;
+    }
+
+    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > .open ul > a {
+        text-align: right;
+    }
+}
+
 #device{
     width: 400px;
 }
@@ -342,6 +438,7 @@ fieldset table{
 .component{
     width: 200px;
 }
+
 
 /*
 .component{
