@@ -4,7 +4,7 @@ li a.inactive {color: red}
 div.layout.menu {background-color: lightgrey}
 div.frame{float: inherit; background-color: orange; border: solid black 5px; border-radius: 25px; padding-left: 25px; padding-right :25px}
 
-a.selected {background-color: #00B7FF}
+a.selected {background-color: #808080}
 
 nav ul li {width: 170px}
 
@@ -122,6 +122,7 @@ input[type=button] {
     height: 0;
     visibility: hidden;
 }
+
 
 nav{
     display:inline-block;
@@ -291,6 +292,7 @@ nav{
     height: 100px;
     min-height: 100px;
     padding-top: 0px;
+    margin-top: 20px;
 }
 
 #head.secondary {
@@ -440,24 +442,7 @@ nav#filter a.current {
 }
 
 
-/*
-.component{
-    max-width: 200px;
-    width:expression(document.body.clientWidth>200?"200px":"auto");
-    max-height:200px;
-    height:expression(document.body.clientHeight>200?"200px":"auto");
-    overflow:hidden;
-    margin:0 auto;
-    display:block;
+/*contents*/
+.content{
+    font-size: 20px;
 }
-
-#computer img{
-    max-width: 620px;
-    width:expression(document.body.clientWidth>400?"620px":"auto");
-    max-height:300px;
-    height:expression(document.body.clientHeight>200?"300px":"auto");
-    overflow:hidden;
-    margin:0 auto;
-    display:block;
-}
-*/
