@@ -49,6 +49,17 @@
 
 <script>
     function myMap() {
+
+        var binLocations = [
+
+            //EXAMPLE DATA
+            [-37.7967896,144.9581293],
+            [-37.7967896,144.9681293],
+            [-37.7967896,144.9781293],
+            [-37.7967896,144.9881293],
+        ]
+
+
         var mapOptions = {
             center: new google.maps.LatLng(-37.7967896,144.9581293),
             zoom: 10,
@@ -56,15 +67,28 @@
         };
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(-37.7967896,144.9581293),
-            map: map,
-            icon: {
-                url: "../assets/images/bin.png",
-                scaledSize: new google.maps.Size(50, 50),
-                 },
-            title: 'Hello World!'
-        });
+        binLocations.forEach(function(binLocation){
+            new google.maps.Marker({
+                position: new google.maps.LatLng(binLocation[0], binLocation[1]),
+                map: map,
+                icon: {
+                    url: "../assets/images/bin.png",
+                    scaledSize: new google.maps.Size(20, 20),
+                     },
+                title: 'Hello World!'
+            });
+        })
+
+        //
+        // var marker = new google.maps.Marker({
+        //     position: new google.maps.LatLng(-37.7967896,144.9581293),
+        //     map: map,
+        //     icon: {
+        //         url: "../assets/images/bin.png",
+        //         scaledSize: new google.maps.Size(50, 50),
+        //          },
+        //     title: 'Hello World!'
+        // });
     }
 </script>
 
