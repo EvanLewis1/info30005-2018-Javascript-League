@@ -26,6 +26,7 @@ document.write('<div class="navbar navbar-inverse">\n' +
     '                <li><a class=layoutlink href="What.html">What</a></li>\n' +
     '                <li><a class=layoutlink href="why.html">Why</a></li>\n' +
     '                <li><a class=layoutlink href="Where.html">Where</a></li>\n' +
+    '                <li><a class=layoutlink href="Donation.html">Donation</a></li>'+
     '                <li><a class=layoutlink href="Personal_privacy.html">Information Privacy</a></li>\n' +
     '                <li class="dropdown active">\n' +
     '                    <a href="#" class="layoutlink dropdown-toggle" data-toggle="dropdown">Login/Account <b class="caret"></b></a>\n' +
