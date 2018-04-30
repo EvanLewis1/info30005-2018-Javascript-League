@@ -81,3 +81,7 @@ ul li a.active{
 section ul{
     color: black;
 }
+
+ul li a.picked{
+    color: #b3ccff;
+}

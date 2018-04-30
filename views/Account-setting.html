@@ -8,6 +8,44 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style-for-head.css">
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
+    <script>
+        function changeSubtitle(information){
+            var sidebars = document.getElementsByClassName("sidebar");
+            var x = document.getElementsByClassName(information);
+            removeClass(sidebars,"picked");
+            addClass(x,"picked")
+            var new_var = "New" + " " + information;
+            document.getElementById("new_label").innerHTML = new_var;
+            document.getElementsById("new_input").name = new_var;
+            document.getElementsById("new_input").value = new_var;
+        }
+
+        function addClass(elements, className) {
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                if (element.classList) {
+                    element.classList.add(className);
+                } else {
+                    element.className += ' ' + className;
+                }
+            }
+        }
+        function removeClass(elements, className) {
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                if (element.classList) {
+                    element.classList.remove(className);
+                } else {
+                    element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                }
+            }
+        }
+    </script>
+    <style>
+        a.active{
+
+        }
+    </style>
 </head>
 
 <body>
@@ -31,15 +69,15 @@
 
 <section class = rightcolumn>
     <ul>
-        <li><a class="active">Email</a> </li>
-        <li><a href="Account-setting-name.html">Name</a></li>
-        <li><a href="Account-setting-number.html">Phone Number</a></li>
-        <li><a href="Account-setting-address.html">Address</a></li>
+        <li><a class = "sidebar Email" onclick=changeSubtitle("Email")>Email</a> </li>
+        <li><a class = "sidebar Name" onclick = changeSubtitle("Name")>Name</a></li>
+        <li><a class = "sidebar Phone_number" onclick = changeSubtitle("Phone_number")>Phone Number</a></li>
+        <li><a class = "sidebar Address" onclick = changeSubtitle("Address")>Address</a></li>
     </ul>
-    <label for="New Email">Change Email:</label>
-    <input id = "New Email" name="New Email" value="New email address" >
+    <label id = "new_label"for="new_input"></label>
+    <input id = "new_input" name="" value="" >
     <br>
-    <button type="button" onclick="alert('Update success!')">Confirm to change</button>
+    <button id = "button" type="button" onclick="alert('Update success!')">Confirm to change</button>
 </section>
 
 
