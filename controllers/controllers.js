@@ -2,14 +2,14 @@ var mongoose = require('mongoose');
 var Items = mongoose.model('list');
 
 var creatitem = function(req,res){
-    var item = new Item({
+    var item = new Items({
         "name":req.body.name,
         "address": req.body.address,
         "phone": req.body.phone,
     });
-    item.save(function (err,newItem) {
+    item.save(function (err,newItems) {
             if(!err){
-                res.send(newItem);
+                res.send(newItems);
             }else{
                 res.sendStatus(400);
             }

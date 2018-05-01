@@ -10,6 +10,9 @@ router.get('/api',controller.findAllItem);
 //find list item by id
 router.get('/api/id/:id',controller.findOneItem);
 
+//Create a new item
+router.post('/api', controller.creatitem);
+
 // define the home page route
 router.get('/', function(req, res) {
     res.send(path.join(__dirname, 'views/index.html'));
