@@ -2,14 +2,18 @@ Database collections
 
 
 WHERE PAGE
--collection of bins
-- bin data
+- Collection of bins
+- Bin data
         latitude: number
         longitude: number
 
 
 ACCOUNTS
-
-
-
-DONATIONS
+-Collection of users
+-User data
+        Email: String
+        PasswordHash: String
+        Location
+        ListOfDonations: [
+            name: String
+        ]
