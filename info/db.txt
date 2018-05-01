@@ -1,0 +1,15 @@
+Database collections
+
+
+WHERE PAGE
+-collection of bins
+- bin data
+        latitude: number
+        longitude: number
+
+
+ACCOUNTS
+
+
+
+DONATIONS
