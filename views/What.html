@@ -20,6 +20,13 @@
                 src: "../assets/images/phone.png",
                 components: [
                     {
+                        name: "Tantalum",
+                        src: "assets/images/tantalum.png",
+                        qualities: [
+                            {title: "Rare", text: "Tantalum is a rare element that appears in all phones, so rare in fact that it contributes to war in the Democratic Republic of Congo."}
+                        ]
+                    },
+                    {
                         name: "Battery",
                         src: "../assets/images/phone_batteries.jpg",
                         qualities: [
@@ -137,6 +144,13 @@
 
                 components.appendChild(image)
             })
+
+            //Tell user to select a component
+            var qualities = document.getElementById("qualities")
+            info = document.createElement("h2")
+            info.innerHTML = "Please Select A Component"
+            qualities.appendChild(info)
+
         }
 
         function selectComponent(component) {
