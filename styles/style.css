@@ -31,14 +31,17 @@ div.small {width: 50px}
 div.large {width : 535px}
 .re_word {padding-left: 50px; padding-right: 50px; display: block}
 
+
+/* Home page // Why page*/
+
 div.popup {position: absolute; width: 700px; height: 500px; left: 300px; background-color: blue; border-radius: 10px}
-div.hidden {visibility: hidden;}
+div.myHidden {visibility: hidden;}
 div.green{background-color: green}
 div.orange{background-color: orange}
 div.blue {background-color: blue}
 div.red {background-color: red}
 
-button.close {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
+button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
 
 nav.navbar-header{
     color: cornflowerblue;
