@@ -30,10 +30,10 @@
     <div class="rightcolumn">
         <div class="card">
             <h2>Your Suburb: </h2>
-            <input type="number">
+            <input id = suburb type="text">
             <h2>Or your post number</h2>
-            <input type="number" maxlength="6">
-            <button type="button" class="submit">Go and Check</button>
+            <input id = postcode type="number" maxlength="6">
+            <button type="button" onclick = searchPostCode()>Go and Check</button>
         </div>
         <div class="card">
             <h3>The nearest recycling location:</h3>
@@ -48,6 +48,7 @@
 </div>
 
 <script>
+    var map
     function myMap() {
 
         var binLocations = [
@@ -65,7 +66,7 @@
             zoom: 10,
             mapTypeId: google.maps.MapTypeId.MAP
         };
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
         binLocations.forEach(function(binLocation){
             new google.maps.Marker({
@@ -89,7 +90,32 @@
         //          },
         //     title: 'Hello World!'
         // });
+
+
+
     }
+    function searchPostCode() {
+
+        var address = document.getElementById("suburb")
+        var postcode = document.getElementById("postcode")
+
+        input = address.value + " " +  postcode.value
+
+
+        console.log(input)
+        geocoder = new google.maps.Geocoder()
+        // geocoder.geocode("3191", new google.maps.LatLng(0, 0),)
+
+        geocoder.geocode({'address': input}, function(results, status) {
+            if (status === 'OK') {
+                map.panTo(results[0].geometry.location)
+                }
+             else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAj832WWA8O7gZc0VPIuZ7Mv62ecnbzpo&callback=myMap"></script>
