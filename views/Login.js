@@ -1,12 +1,8 @@
-const bodyParser = require("../node_modules/body-parser");
-/*router.use(bodyParser.urlencoded({extended: false}));
-router.use(bodyParser.json());*/
-
 var data;
+var userEmail;
 
 function myFunction() {
-    var data;
-    var userEmail = document.getElementsByClassName("Useremail");
+    userEmail = document.getElementsByClassName("Useremail");
     var password = document.getElementsByClassName("Userpassword");
     password= password[0].value;
     console.log(userEmail[0].value);
@@ -14,16 +10,17 @@ function myFunction() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             data = this.responseText;
+
             data = JSON.parse(data)[0];
             console.log(data);
             passwordLogin = data.passwordHash;
-            console.log(data);
+            console.log(passwordLogin);
             console.log("password = ",password);
-            console.log(passwordLogin == password);
+            console.log((passwordLogin == password));
             if (passwordLogin == password){
                 window.location.href = "Account.html";
             }else{
-                alert('sorry, your password is wrong. Please try again');
+                alert('Sorry, your password is wrong. Please try again');
             }
         }
     };
@@ -31,4 +28,13 @@ function myFunction() {
     xhttp.send();
 }
 
-module.exports.data = data;
+function register(){
+    window.location.href = "Register.html";
+}
+
+function getUserEmail(){
+    console.log(userEmail);
+    return userEmail;
+}
+
+module.exports.getUserEmail = getUserEmail;

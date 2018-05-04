@@ -7,6 +7,8 @@ var creatitem = function(req,res){
     var item = new Items({
         "name":req.body.name,
         "address": req.body.address,
+        "firstname": req.body.firstname,
+        "lastname": req.body.lastname,
         "phone": req.body.phone,
         "email": req.body.email,
         "passwordHash": req.body.passwordHash,

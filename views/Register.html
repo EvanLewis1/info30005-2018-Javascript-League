@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/Account.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style-for-head.css">
+    <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
+</head>
+<body>
+<script src = nav.js></script>
+<header id="head" class="secondary">
+    <div class="container">
+        <h1>Register</h1>
+    </div>
+</header>
+
+<fieldset>
+    <table>
+        <tr height="170">
+            <td width="570px"> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <table>
+                    <tr>
+                        <td>E-mail:(required)</td>
+                        <td><input type="text" name="email" value="E-mail address" size="10" maxlength="40"
+                                   class="Useremail" onfocus="if (this.value=='E-mail address')  this.value='';"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>First Name:(optional)</td>
+                        <td>
+                            <input type="text" name="firstName" value="Your First Name" size="10" maxlength="20"
+                                   class="firstName" onfocus="if (this.value=='Your First Name')  this.value='';"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name:(optional)</td>
+                        <td>
+                            <input type="text" name="lastName" value="Your Last Name" size="10" maxlength="20"
+                                   class="lastName" onfocus="if (this.value=='Your Last Name')  this.value='';"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password:(required)</td>
+                        <td><input type="password" name="password" value="Your password" size="10" maxlength="20"
+                                        class="password" onfocus="if (this.value=='Your password')  this.value='';"/></td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-primary" onclick=buildAccount()>Set up my account</button></td>
+                    </tr>
+                </table>
+            <td></td>
+
+    </table>
+</fieldset>
+
+<script>
+    function buildAccount(){
+        var user={};
+        user.firstname = document.getElementsByClassName("firstName")[0].value;
+        console.log(user.firstname);
+        user.lastname = document.getElementsByClassName("lastName")[0].value;
+        console.log(user.lastname);
+        if (document.getElementsByClassName("Useremail")[0].value == ""){
+            alert("Email must be filled")
+        }else{
+            user.email = document.getElementsByClassName("Useremail")[0].value;
+            console.log(user.email);
+        }
+        if (document.getElementsByClassName("password")[0].value == ""){
+            alert("Password must be filled");
+        }else{
+            user.passwordHash = document.getElementsByClassName("password")[0].value;
+            console.log(user.passwordHash);
+        }
+
+        var json = JSON.stringify(user);
+        console.log("json=",json);
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/api", true);
+        xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhttp.onload = function () {
+            var users = JSON.parse(xhttp.responseText);
+            console.log(users);
+            if (xhttp.readyState == 4 && xhttp.status == "201") {
+                console.table(users);
+            } else {
+                console.error(users);
+            }
+        };
+        xhttp.send(json);
+    }
+</script>
+
+</body>
+</html>

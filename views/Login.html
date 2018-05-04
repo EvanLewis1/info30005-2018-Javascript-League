@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content=""><meta name="author" content="">
-    <title>Home</title>
+    <title>Login</title>
 
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="../styles/style.css">
@@ -50,61 +50,16 @@
                             <td></td>
                         </tr>
                         <tr>
-                            <td><button href="" type="button" class="btn-outline-primary" onclick=myFunction()>Login</button></td>
+                            <td><button type="button" class="btn-outline-primary" onclick=myFunction()>Login</button></td>
                             <td></td>
-                            <td><button type="button" class="btn-outline-primary" value="Register">Register</button></td>
+                            <td><button type="button" class="btn-outline-primary" onclick =register()>Register</button></td>
                         </tr>
                         <tr></tr>
                 </table>
             <td></td>
-            <td><p id="testing"></p></td>
 
     </table>
 </fieldset>
-
-
-<script>
-    /*var mongoose = require('mongoose');
-    var Items = mongoose.model('lists');
-    function myFunction() {
-        var userEmail = document.getElementsByClassName("Useremail");
-        var password = document.getElementsByClassName("Userpassword");
-        console.log(userEmail[0].value);
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                data = this.responseText;
-                console.log(data);
-                document.getElementById("testing").innerHTML = data;
-                if (data.passwordHash == password){
-
-                }
-            }
-        };
-        xhttp.open("GET", "http://localhost:3000/api/email/"+userEmail[0].value, true);
-        xhttp.send();
-
-    }*/
-
-    function validateLogin(){
-        /*var sUserName = document.getElementsByName();
-        var sPassword = document.frmLogin.password.value ;
-        var sinputCode =document.frmLogin.inputcode.value ;
-        if ((sUserName =="") || (sUserName=="Your name")){
-            alert("Please enter your email!");
-            return false ;
-        }
-
-        if ((sPassword =="") || (sPassword=="Your password")){
-            alert("Please enter your password!");
-            return false ;
-        }*/
-        console.log(data);
-        documnet.getElementById("testing").innerHTML = "shabi";
-    }
-
-
-</script>
 
 
 </body>
