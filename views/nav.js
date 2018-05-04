@@ -29,10 +29,10 @@ document.write('<div class="navbar navbar-inverse">\n' +
     '                <li><a class=layoutlink href="Donation.html">Donation</a></li>'+
     '                <li><a class=layoutlink href="Personal_privacy.html">Information Privacy</a></li>\n' +
     '                <li class="dropdown active">\n' +
-    '                    <a href="#" class="layoutlink dropdown-toggle" data-toggle="dropdown">Login/Account <b class="caret"></b></a>\n' +
+    '                    <a href="Login.html" class="layoutlink dropdown-toggle" data-toggle="dropdown">Login/Account <b class="caret"></b></a>\n' +
     '                    <ul class="dropdown-menu">\n' +
     '                        <li><a href="Account.html">Account information</a></li>\n' +
-    '                        <li><a href="Account-setting.html">Account information</a></li>\n' +
+    '                        <li><a href="Login.html">Login in</a></li>\n' +
     '                        <li><a href="#">My action</a></li>\n' +
     '                    </ul>\n' +
     '                </li>\n' +

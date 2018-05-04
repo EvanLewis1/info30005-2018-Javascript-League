@@ -1,3 +1,4 @@
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const fakedata = [{ "name": "KaleighMueller",
     "address": "06279 Metz Corner, Louisiana,  Tokelau",
     "phone": "370.602.9373 x5616" },
@@ -27,7 +28,20 @@ const fakedata = [{ "name": "KaleighMueller",
         "phone": "1-461-834-7700 x55216" },
     {  "name": "CasandraBuckridge",
         "address": "5077 Kuhn Wells, Maine,  Myanmar",
-        "phone": "599-973-7677 x66543" } ];
+        "phone": "599-973-7677 x66543" }] ;
+
+function getApi()
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://www.localhost:3000/api", false);
+    xhr.send();
+    console.log(xhr.status);
+    console.log(xhr.statusText);
+}
+
+var object = JSON.parse(fakedata);
+console.log(object);
+module.exports.fakedata = fakedata;
 
 
 

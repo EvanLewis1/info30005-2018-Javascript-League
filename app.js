@@ -41,14 +41,15 @@ var list = [ { name: 'KaleighMueller',
         phone: '599-973-7677 x66543' } ];
 
 
-/*Database setup
-require('./models/db.js');
+//Database setup
+var data =  require('./models/db.js');
+
 
 //route setup
-var routes = require('./routes/routes');
-app.use('/',routes);*/
+var routes = require('./routes/routes.js');
+app.use('/',routes);
 
-app.get('/api', function(req,res){
+/*app.get('/api', function(req,res){
     res.send(list);
 });
 
@@ -58,7 +59,7 @@ app.get('/api/:id', function(req,res){
 
 app.get('/api/name/:name', function(req,res){
     res.send(list[req.params.name]);
-})
+})*/
 
 app.listen(PORT, function(){
     console.log(`Express listening on port ${PORT}`);

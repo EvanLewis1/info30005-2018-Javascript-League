@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style-for-head.css">
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
+    <script src="./Login.js"></script>
 </head>
 
 <body>
@@ -36,33 +37,57 @@
 
                         <tr>
                             <td>Email：</td>
-                            <td><input type="text" name="username" value="Your name" size="20" maxlength="20"
-                                       onfocus="if (this.value=='Your name')  this.value='';"/></td>
+                            <td><input type="text" name="username" value="Your name" size="10" maxlength="40"
+                                        class="Useremail" onfocus="if (this.value=='Your name')  this.value='';"/></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>Password：</td>
-                            <td><input type="password" name="password" value="Your password" size="20" maxlength="20"
-                                       onfocus="if (this.value=='Your password')  this.value='';"/></td>
+                            <td><input type="password" name="password" value="Your password" size="20" maxlength="40"
+                                        class = "Userpassword" onfocus="if (this.value=='Your password')  this.value='';"/></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" name="login" value="Login" onClick="return validateLogin()"/></td>
-                            <td><input type="button" name="button" value="Registe"></td>
+                            <td><button href="" type="button" class="btn-outline-primary" onclick=myFunction()>Login</button></td>
+                            <td></td>
+                            <td><button type="button" class="btn-outline-primary" value="Register">Register</button></td>
                         </tr>
+                        <tr></tr>
                 </table>
-            </td>
+            <td></td>
+            <td><p id="testing"></p></td>
 
-            <td></td>
-            <td></td>
     </table>
 </fieldset>
-</form>
-<script language="javascript">
+
+
+<script>
+    /*var mongoose = require('mongoose');
+    var Items = mongoose.model('lists');
+    function myFunction() {
+        var userEmail = document.getElementsByClassName("Useremail");
+        var password = document.getElementsByClassName("Userpassword");
+        console.log(userEmail[0].value);
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                data = this.responseText;
+                console.log(data);
+                document.getElementById("testing").innerHTML = data;
+                if (data.passwordHash == password){
+
+                }
+            }
+        };
+        xhttp.open("GET", "http://localhost:3000/api/email/"+userEmail[0].value, true);
+        xhttp.send();
+
+    }*/
+
     function validateLogin(){
-        var sUserName = document.frmLogin.username.value ;
+        /*var sUserName = document.getElementsByName();
         var sPassword = document.frmLogin.password.value ;
         var sinputCode =document.frmLogin.inputcode.value ;
         if ((sUserName =="") || (sUserName=="Your name")){
@@ -73,8 +98,12 @@
         if ((sPassword =="") || (sPassword=="Your password")){
             alert("Please enter your password!");
             return false ;
-        }
+        }*/
+        console.log(data);
+        documnet.getElementById("testing").innerHTML = "shabi";
     }
+
+
 </script>
 
 

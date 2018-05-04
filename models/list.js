@@ -1,10 +1,13 @@
 var mongoose = require('mongoose');
+
 var listSchema = mongoose.Schema(
     {
         "name": String,
         "address": String,
         "phone": String,
+        "email": String,
+        "passwordHash": String
     }
 );
 
-mongoose.model('list',listSchema);
+module.exports = mongoose.model('lists',listSchema);

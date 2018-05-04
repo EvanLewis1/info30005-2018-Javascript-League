@@ -15,5 +15,10 @@ ACCOUNTS
         PasswordHash: String
         Location
         ListOfDonations: [
-            name: String
+            {name: String
+            brand: String
+            age: Int
+            description: String
+            images: Links}
         ]
+
