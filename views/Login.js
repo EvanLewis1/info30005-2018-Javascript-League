@@ -3,12 +3,12 @@ var userEmail;
 
 function myFunction() {
     //verify email format
-    var emailRegex = /^\w+@\w+(\.\w+)+$/;
+    var emailRegex = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
     userEmail = document.getElementsByClassName("Useremail");
     var email = userEmail.value;
     if(!emailRegex.test(email)){
         document.getElementById("email_span").style.color = "red";
-        alert('Sorry, please enter the right email');
+        alert('Sorry, please enter the right email format');
     }
 
     var password = document.getElementsByClassName("Userpassword");
