@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var Items = mongoose.model('lists');
+var Bins = mongoose.model('bins');
 
 var creatitem = function(req,res){
     //console.log(req.body);
@@ -23,13 +24,17 @@ var creatitem = function(req,res){
 };
 
 var addBin = function(req,res){
-    var bin = new Items({
-        location: req.location,
+
+    console.log("received location: ", req.body.location)
+    var bin = new Bins({
+        "location": req.body.location,
     });
+
     bin.save(function(err,newItems){
         if(!err){
             res.send("ok");
         }else{
+            console.log("error", err)
             res.sendStatus(400);
         }
     })

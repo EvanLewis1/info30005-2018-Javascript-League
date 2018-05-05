@@ -56,7 +56,7 @@
     function myMap() {
 
         Bins.loadList()
-        console.log(Bins.list)
+
 
 
 
@@ -78,7 +78,7 @@
 
         Bins.list.forEach(function(binLocation){
             new google.maps.Marker({
-                position: binLocation,
+                position: new google.maps.LatLng(binLocation[0],binLocation[1]),
                 map: map,
                 icon: {
                     url: "../assets/images/bin.png",

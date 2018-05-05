@@ -22,8 +22,9 @@
 
             geocoder.geocode({'address': address}, function (results, status) {
                 if (status === 'OK') {
-
-                    loc = new google.maps.LatLng(results[0].geometry.location.Pa, results[0].geometry.location.Qa)
+                    console.log("AJLD")
+                    loc = [results[0].geometry.location.lat(), results[0].geometry.location.lng()]
+                    console.log(typeof(loc))
 
                     Bins.addBin(loc)
           //          window.location = "/Where.html"

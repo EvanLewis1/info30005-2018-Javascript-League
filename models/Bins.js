@@ -10,13 +10,12 @@ Bins = {
     addBin: function (coordinates) {
         //Send coordinates to server
 
+        console.log(0)
+
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
+            console.log(3)
             if (this.readyState == 4 && this.status == 200) {
-                data = this.responseText;
-
-                data = JSON.parse(data)[0];
-                console.log(data);
                 console.log(1)
             }
             else{
@@ -25,8 +24,11 @@ Bins = {
                 console.log("xhttp request failed?")
             }
             ;
-            xhttp.open("POST", "/addBin", true);
-            xhttp.send(JSON.stringify(coordinates));
         }
+        xhttp.open("POST", "/addBin", true);
+        xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhttp.send(JSON.stringify({location: coordinates}));
+        console.log(5)
+
     }
 };
