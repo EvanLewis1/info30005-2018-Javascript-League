@@ -1,3 +1,5 @@
+//import "https://maps.googleapis.com/maps/api/js?key=AIzaSyCAj832WWA8O7gZc0VPIuZ7Mv62ecnbzpo&callback=myMap"></script>
+
 Bins = {
     list: [],
 
@@ -7,10 +9,10 @@ Bins = {
 
             Bins.list = [
                 //EXAMPLE DATA
-                [-37.7967896, 144.9581293],
-                [-37.7967896, 144.9681293],
-                [-37.7967896, 144.9781293],
-                [-37.7967896, 144.9881293],
+                new google.maps.LatLng(-37.7967896, 144.9581293),
+                new google.maps.LatLng(-37.7967896, 144.9681293),
+                new google.maps.LatLng(-37.7967896, 144.9781293),
+            new google.maps.LatLng(-37.7967896, 144.9881293),
             ]
         }
     },
@@ -25,7 +27,7 @@ Bins = {
 
 };
 console.log(Bins.list)
-Bins.loadList();
+// Bins.loadList();
 console.log(Bins.list)
 
 
