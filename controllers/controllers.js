@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var Items = mongoose.model('lists');
+var Bins = mongoose.model('bins');
 
 var creatitem = function(req,res){
     //console.log(req.body);
@@ -20,6 +21,23 @@ var creatitem = function(req,res){
                 res.sendStatus(400);
             }
     });
+};
+
+var addBin = function(req,res){
+
+    console.log("received location: ", req.body.location)
+    var bin = new Bins({
+        "location": req.body.location,
+    });
+
+    bin.save(function(err,newItems){
+        if(!err){
+            res.send("ok");
+        }else{
+            console.log("error", err)
+            res.sendStatus(400);
+        }
+    })
 };
 
 var findAllItems = function(req,res){
@@ -71,3 +89,4 @@ module.exports.findAllItem = findAllItems;
 module.exports.findOneItem = findOneItem;
 module.exports.findByName = findByName;
 module.exports.findByEmail = findByEmail;
+module.exports.addBin = addBin;

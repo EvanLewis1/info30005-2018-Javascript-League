@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where can recycle</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/bootstrap-theme.css" media="screen">
+    <script src=../models/Bins.js></script>
+
+    <script>
+        function createGeocoder() {
+            geocoder = new google.maps.Geocoder()
+        }
+
+        function submitNewBin() {
+
+            console.log("Hello")
+            var input = document.getElementById("address")
+
+            var address = input.value
+
+            geocoder.geocode({'address': address}, function (results, status) {
+                if (status === 'OK') {
+                    console.log("AJLD")
+                    loc = [results[0].geometry.location.lat(), results[0].geometry.location.lng()]
+                    console.log(typeof(loc))
+
+                    Bins.addBin(loc)
+          //          window.location = "/Where.html"
+
+                }
+                else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAj832WWA8O7gZc0VPIuZ7Mv62ecnbzpo&callback=createGeocoder"></script>
+
+</head>
+<body>
+
+<script src=nav.js></script>
+
+
+<input id=address type="text">
+<button type="button" onclick=submitNewBin()>Add</button>
+
+
+</body>
+
+</html>

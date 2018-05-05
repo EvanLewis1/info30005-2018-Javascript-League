@@ -42,7 +42,7 @@
         <div class="card">
             <h3></h3>
             <p>Found One Not In Our Database? Help Us Out</p>
-            <button type="button" class="ADD">ADD</button>
+            <a type="button" class="ADD" href = "./addBin.html" >ADD</a>
         </div>
     </div>
 </div>
@@ -54,6 +54,9 @@
 
     var map
     function myMap() {
+
+        Bins.loadList()
+
 
 
 
@@ -75,7 +78,7 @@
 
         Bins.list.forEach(function(binLocation){
             new google.maps.Marker({
-                position: new google.maps.LatLng(binLocation[0], binLocation[1]),
+                position: new google.maps.LatLng(binLocation[0],binLocation[1]),
                 map: map,
                 icon: {
                     url: "../assets/images/bin.png",
