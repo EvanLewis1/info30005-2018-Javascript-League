@@ -24,4 +24,15 @@ var listSchema = mongoose.Schema(
     }
 );
 
+
+//Bin Schema
+
+var binsSchema = mongoose.Schema(
+    {
+        "location": Object,
+    }
+);
+
+
 module.exports = mongoose.model('lists',listSchema);
+module.exports = mongoose.model('bins',binsSchema);

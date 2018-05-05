@@ -42,23 +42,22 @@
         <div class="card">
             <h3></h3>
             <p>Found One Not In Our Database? Help Us Out</p>
-            <button type="button" class="ADD">ADD</button>
+            <a type="button" class="ADD" href = "./addBin.html" >ADD</a>
         </div>
     </div>
 </div>
 
+
+<script src = '../models/Bins.js'></script>
 <script>
+
+
     var map
     function myMap() {
 
-        var binLocations = [
+        Bins.loadList()
 
-            //EXAMPLE DATA
-            [-37.7967896,144.9581293],
-            [-37.7967896,144.9681293],
-            [-37.7967896,144.9781293],
-            [-37.7967896,144.9881293],
-        ]
+
 
 
         var mapOptions = {
@@ -66,11 +65,20 @@
             zoom: 10,
             mapTypeId: google.maps.MapTypeId.MAP
         };
+        //Try and get users location
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-        binLocations.forEach(function(binLocation){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                console.log("pan")
+                //map.panTo(new google.maps.LatLng(position.coords.longitude, position.coords.latitude))
+            })}
+
+
+
+        Bins.list.forEach(function(binLocation){
             new google.maps.Marker({
-                position: new google.maps.LatLng(binLocation[0], binLocation[1]),
+                position: new google.maps.LatLng(binLocation[0],binLocation[1]),
                 map: map,
                 icon: {
                     url: "../assets/images/bin.png",
@@ -109,6 +117,8 @@
         geocoder.geocode({'address': input}, function(results, status) {
             if (status === 'OK') {
                 map.panTo(results[0].geometry.location)
+                console.log(results[0].geometry.location)
+
                 }
              else {
                 alert('Geocode was not successful for the following reason: ' + status);
