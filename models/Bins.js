@@ -1,19 +1,33 @@
 Bins = {
-    list: [
-        //EXAMPLE DATA
-        [-37.7967896, 144.9581293],
-        [-37.7967896, 144.9681293],
-        [-37.7967896, 144.9781293],
-        [-37.7967896, 144.9881293],
-    ],
+    list: [],
 
-    addBin: function(coordinates){
+    loadList: function () {
+
+        if (Bins.list.length === 0) {
+
+            Bins.list = [
+                //EXAMPLE DATA
+                [-37.7967896, 144.9581293],
+                [-37.7967896, 144.9681293],
+                [-37.7967896, 144.9781293],
+                [-37.7967896, 144.9881293],
+            ]
+        }
+    },
+
+    addBin: function (coordinates) {
 
         //Change to Send coordinates to server
-        list.push(coordinates)
+        Bins.list.push(coordinates)
+
+        console.log(Bins.list)
     }
 
 };
+console.log(Bins.list)
+Bins.loadList();
+console.log(Bins.list)
+
 
 
 //LOAD LIST FROM SERVER
