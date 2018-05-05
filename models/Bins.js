@@ -3,8 +3,27 @@
 Bins = {
     list: [],
 
-    loadList: function () {
-        Bins.list = []//Load from server
+    loadList: function (callback) {
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+
+                data = this.responseText
+                Bins.list = JSON.parse(data)
+                console.log(typeof Bins.list)
+                callback()
+            }
+            else{
+
+                console.log("xhttp request failed?")
+            }
+            ;
+        }
+        xhttp.open("GET", "/loadBins", true);
+        xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhttp.send();
+
     },
 
     addBin: function (coordinates) {
