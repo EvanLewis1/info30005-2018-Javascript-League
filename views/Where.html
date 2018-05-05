@@ -47,18 +47,15 @@
     </div>
 </div>
 
+
+<script src = '../models/Bins.js'></script>
 <script>
+
+
     var map
     function myMap() {
 
-        var binLocations = [
 
-            //EXAMPLE DATA
-            [-37.7967896,144.9581293],
-            [-37.7967896,144.9681293],
-            [-37.7967896,144.9781293],
-            [-37.7967896,144.9881293],
-        ]
 
         var mapOptions = {
             center: new google.maps.LatLng(-37.7967896,144.9581293),
@@ -76,7 +73,7 @@
 
 
 
-        binLocations.forEach(function(binLocation){
+        Bins.list.forEach(function(binLocation){
             new google.maps.Marker({
                 position: new google.maps.LatLng(binLocation[0], binLocation[1]),
                 map: map,
