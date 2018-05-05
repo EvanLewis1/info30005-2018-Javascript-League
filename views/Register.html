@@ -62,6 +62,15 @@
 </fieldset>
 
 <script>
+    var xmlHttp;
+    function CreateXmlHttp(){
+        if (window.ActiveXObject) {
+            xmlHttp= new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        else if(window.XMLHttpRequest){
+            xmlHttp= new XMLHttpRequest();
+        }
+    }
     function buildAccount(){
         var user={};
         user.firstname = document.getElementsByClassName("firstName")[0].value;
@@ -79,6 +88,9 @@
         var email = userEmail.value;
         if(!emailRegex.test(email)){
             alert('Sorry, please enter the right email format');
+        }
+        if (xmlHttp.responseText != 1) {
+            alert('This email address has been registered, please use another email');
         }
 
         if (document.getElementsByClassName("password")[0].value == ""){
