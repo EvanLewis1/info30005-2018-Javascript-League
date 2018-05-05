@@ -29,6 +29,10 @@ router.post('/api', controller.creatitem);
 //Add bin loaction
 router.post("/addBin", controller.addBin);
 
+//Load bin locations
+router.get("/loadBins", controller.loadBins);
+
+
 // define the home page route
 router.get('/', function(req, res) {
     res.send(path.join(__dirname, 'views/index.html'));
