@@ -2,11 +2,14 @@ Database collections
 
 
 WHERE PAGE
+
+BINS
 - Collection of bins
 - Bin data
-        latitude: number
-        longitude: number
+        location: LatLng (google maps data type)
 
+
+ACCOUNTS PAGE
 
 ACCOUNTS
 -Collection of users

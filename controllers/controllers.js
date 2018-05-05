@@ -22,6 +22,19 @@ var creatitem = function(req,res){
     });
 };
 
+var addBin = function(req,res){
+    var bin = new Items({
+        location: req.location,
+    });
+    bin.save(function(err,newItems){
+        if(!err){
+            res.send("ok");
+        }else{
+            res.sendStatus(400);
+        }
+    })
+};
+
 var findAllItems = function(req,res){
     Items.find({},function(err,lists){
         if(!err){
@@ -71,3 +84,4 @@ module.exports.findAllItem = findAllItems;
 module.exports.findOneItem = findOneItem;
 module.exports.findByName = findByName;
 module.exports.findByEmail = findByEmail;
+module.exports.addBin = addBin;

@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media="screen">
-    <script src = ../models/Bins.js></script>
+    <script src=../models/Bins.js></script>
 
     <script>
         function createGeocoder() {
             geocoder = new google.maps.Geocoder()
         }
+
         function submitNewBin() {
 
             console.log("Hello")
@@ -19,13 +20,13 @@
 
             var address = input.value
 
-            geocoder.geocode({'address': address}, function(results, status) {
+            geocoder.geocode({'address': address}, function (results, status) {
                 if (status === 'OK') {
 
                     loc = new google.maps.LatLng(results[0].geometry.location.Pa, results[0].geometry.location.Qa)
 
                     Bins.addBin(loc)
-                       window.location = "/Where.html"
+          //          window.location = "/Where.html"
 
                 }
                 else {
@@ -44,7 +45,7 @@
 
 
 <input id=address type="text">
-<button type="button" onclick=submitNewBin() >Add</button>
+<button type="button" onclick=submitNewBin()>Add</button>
 
 
 </body>
