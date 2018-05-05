@@ -21,8 +21,11 @@
 
             geocoder.geocode({'address': address}, function(results, status) {
                 if (status === 'OK') {
-                    Bins.addBin(results[0].geometry.location.lat)
-    //                    window.location = "/Where.html"
+
+                    loc = new google.maps.LatLng(results[0].geometry.location.Pa, results[0].geometry.location.Qa)
+
+                    Bins.addBin(loc)
+                       window.location = "/Where.html"
 
                 }
                 else {

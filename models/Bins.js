@@ -4,33 +4,13 @@ Bins = {
     list: [],
 
     loadList: function () {
-
-        if (Bins.list.length === 0) {
-
-            Bins.list = [
-                //EXAMPLE DATA
-                new google.maps.LatLng(-37.7967896, 144.9581293),
-                new google.maps.LatLng(-37.7967896, 144.9681293),
-                new google.maps.LatLng(-37.7967896, 144.9781293),
-            new google.maps.LatLng(-37.7967896, 144.9881293),
-            ]
-        }
+            Bins.list = []//Load from server
     },
-
+    
     addBin: function (coordinates) {
-
-        //Change to Send coordinates to server
-        Bins.list.push(coordinates)
-
-        console.log(Bins.list)
+        //Send coordinates to server
     }
-
 };
-console.log(Bins.list)
-// Bins.loadList();
-console.log(Bins.list)
-
-
 
 //LOAD LIST FROM SERVER
 
