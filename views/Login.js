@@ -2,7 +2,15 @@ var data;
 var userEmail;
 
 function myFunction() {
+    //verify email format
+    var emailRegex = /^\w+@\w+(\.\w+)+$/;
     userEmail = document.getElementsByClassName("Useremail");
+    var email = userEmail.value;
+    if(!emailRegex.test(email)){
+        document.getElementById("email_span").style.color = "red";
+        alert('Sorry, please enter the right email');
+    }
+
     var password = document.getElementsByClassName("Userpassword");
     password= password[0].value;
     console.log(userEmail[0].value);
