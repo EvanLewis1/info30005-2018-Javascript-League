@@ -74,6 +74,13 @@
             user.email = document.getElementsByClassName("Useremail")[0].value;
             console.log(user.email);
         }
+        var emailRegex = /^\w+@\w+(\.\w+)+$/;
+        userEmail = document.getElementsByClassName("Useremail");
+        var email = userEmail.value;
+        if(!emailRegex.test(email)){
+            alert('Sorry, please enter the right email format');
+        }
+
         if (document.getElementsByClassName("password")[0].value == ""){
             alert("Password must be filled");
         }else{
