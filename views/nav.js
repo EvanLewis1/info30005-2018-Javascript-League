@@ -18,7 +18,8 @@ document.write('<div class="navbar navbar-inverse">\n' +
     '            <!-- Button for smallest screens -->\n' +
     '            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>\n' +
     '            <a class="navbar-brand" href="index.html">\n' +
-    '                <span style="color: grey">E-Recycling</span></a>\n' +
+    '                <!--<span style="color: grey">E-Recycling</span> -->' +
+    '                <div id = "logo"><img src = ../assets/images/logo.png></div></a>\n' +
     '        </div>\n' +
     '        <div class="navbar-collapse collapse">\n' +
     '            <ul class="nav navbar-nav pull-right mainNav">\n' +

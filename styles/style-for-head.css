@@ -44,6 +44,12 @@ blockquote {
 label {
     color: #777;
 }
+
+#logo {
+    width: 50%;
+
+}
+
 .btn-inline {
     color: #9C9C9C;
     font-size: 15px;
