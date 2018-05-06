@@ -55,7 +55,6 @@
     var map
     function myMap() {
 
-        Bins.loadList()
 
 
 
@@ -75,17 +74,20 @@
             })}
 
 
+        Bins.loadList(function() {
 
-        Bins.list.forEach(function(binLocation){
-            new google.maps.Marker({
-                position: new google.maps.LatLng(binLocation[0],binLocation[1]),
-                map: map,
-                icon: {
-                    url: "../assets/images/bin.png",
-                    scaledSize: new google.maps.Size(20, 20),
-                     },
-                title: 'Hello World!'
-            });
+            Bins.list.forEach(function (bin) {
+                console.log(bin.location[0])
+                new google.maps.Marker({
+                    position: new google.maps.LatLng(bin.location[0], bin.location[1]),
+                    map: map,
+                    icon: {
+                        url: "../assets/images/bin.png",
+                        scaledSize: new google.maps.Size(20, 20),
+                    },
+                    title: 'Hello World!'
+                });
+            })
         })
 
         //
