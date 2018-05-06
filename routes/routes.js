@@ -29,14 +29,14 @@ router.post('/api', controller.creatitem);
 //Add bin loaction
 router.post("/addBin", controller.addBin);
 
-<<<<<<< HEAD
+
 //update a user information
 router.put('/api/id/:id',controller.updataItems);
-=======
+
 //Load bin locations
 router.get("/loadBins", controller.loadBins);
 
->>>>>>> ca5a192757047db6f13bc8ea1aa5975727844834
+
 
 // define the home page route
 router.get('/', function(req, res) {

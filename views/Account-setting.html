@@ -18,8 +18,8 @@
             addClass(x,"picked")
             var new_var = "New" + " " + information;
             document.getElementById("new_label").innerHTML = new_var;
-            document.getElementsById("new_input").name = new_var;
-            document.getElementsById("new_input").value = new_var;
+            document.getElementById("new_input").name = new_var;
+            document.getElementById("new_input").value = new_var;
         }
 
         function addClass(elements, className) {
@@ -72,16 +72,54 @@
 <section class = rightcolumn>
     <ul>
         <li><a class = "sidebar Email" onclick=changeSubtitle("Email")>Email</a> </li>
-        <li><a class = "sidebar Name" onclick = changeSubtitle("Name")>Name</a></li>
+        <li><a class = "sidebar First_name" onclick = changeSubtitle("First_name")>First Name</a></li>
+        <li><a class = "sidebar Last_name" onclick = changeSubtitle("Last_name")>Last Name</a></li>
         <li><a class = "sidebar Phone_number" onclick = changeSubtitle("Phone_number")>Phone Number</a></li>
         <li><a class = "sidebar Address" onclick = changeSubtitle("Address")>Address</a></li>
     </ul>
     <label id = "new_label"for="new_input"></label>
-    <input id = "new_input" name="" value="" >
+    <input id = "new_input" name="" onfocus="if (this.value=='New Email'|| this.value == 'New First_name' ||
+                                                    this.value=='New Phone_number' || this.value == 'New Address'
+                                                    || this.value == 'New Last_name')  this.value='';">
     <br>
-    <button id = "button" type="button" onclick="alert('Update success!')">Confirm to change</button>
+    <button id = "button" type="button" onclick="changeInformation()">Confirm to change</button>
 </section>
 
+<script>
+    var id = getCookie("username");
+    function changeInformation(){
+        var user = {};
+        var value = document.getElementById("new_input").value;
+        var name = document.getElementById("new_input").name;
+        console.log(value);
+        console.log(name);
+        if (name == 'New Email'){
+            user.email = value;
+        }else if(name == 'New First_name'){
+            user.firstname = value;
+        }else if(name == 'New Last_name'){
+            user.lastname = value;
+        }else if(name == 'New Address'){
+            user.address = value;
+        }else if(name == 'New Phone_number'){
+            user.address = value;
+        }
 
+        var json = JSON.stringify(user);
+        var xhr = new XMLHttpRequest();
+        xhr.open("PUT", 'api/id/'+id, true);
+        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.onload = function () {
+            var users = JSON.parse(xhr.responseText);
+            if (xhr.readyState == 4 && xhr.status == "200") {
+                console.table(users);
+            } else {
+                console.error(users);
+            }
+        }
+        xhr.send(json);
+        alert('You successfully changed your profile information')
+    }
+</script>
 </body>
 </html>
