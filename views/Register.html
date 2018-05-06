@@ -83,9 +83,9 @@
             user.email = document.getElementsByClassName("Useremail")[0].value;
             console.log(user.email);
         }
-        var emailRegex = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-        userEmail = document.getElementsByClassName("Useremail");
-        var email = userEmail.value;
+        var emailRegex = /^\w+@\w+(\.\w+)+$/;
+        user.email = document.getElementsByClassName("Useremail")[0];
+        var email = user.email.value;
         if(!emailRegex.test(email)){
             alert('Sorry, please enter the right email format');
         }

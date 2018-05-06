@@ -5,7 +5,7 @@ var cookies = require("./Cookies.js");
 
 function myFunction() {
     //verify email format
-    var emailRegex = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    var emailRegex = /^\w+@\w+(\.\w+)+$/;
     userEmail = document.getElementsByClassName("Useremail");
     var email = userEmail.value;
     if(!emailRegex.test(email)){
