@@ -84,8 +84,8 @@
             console.log(user.email);
         }
         var emailRegex = /^\w+@\w+(\.\w+)+$/;
-        userEmail = document.getElementsByClassName("Useremail");
-        var email = userEmail.value;
+        user.email = document.getElementsByClassName("Useremail")[0];
+        var email = user.email.value;
         if(!emailRegex.test(email)){
             alert('Sorry, please enter the right email format');
         }
