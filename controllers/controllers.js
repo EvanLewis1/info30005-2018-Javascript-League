@@ -74,7 +74,7 @@ var findOneItem = function (req, res) {
 
 var findByName = function (req, res) {
     var itemName = req.params.name;
-    Items.find({name: itemName}, function (err, item) {
+    Items.findOne({name: itemName}, function (err, item) {
         if (!err) {
             res.send(item);
         } else {
@@ -85,7 +85,7 @@ var findByName = function (req, res) {
 
 var findByEmail = function (req, res) {
     var itemEmail = req.params.email;
-    Items.find({email: itemEmail}, function (err, item) {
+    Items.findOne({email: itemEmail}, function (err, item) {
         if (!err) {
             res.send(item);
         } else {

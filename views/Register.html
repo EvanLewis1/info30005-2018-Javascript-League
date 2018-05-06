@@ -83,15 +83,6 @@
             user.email = document.getElementsByClassName("Useremail")[0].value;
             console.log(user.email);
         }
-        var emailRegex = /^\w+@\w+(\.\w+)+$/;
-        user.email = document.getElementsByClassName("Useremail")[0];
-        var email = user.email.value;
-        if(!emailRegex.test(email)){
-            alert('Sorry, please enter the right email format');
-        }
-        if (xmlHttp.responseText != 1) {
-            alert('This email address has been registered, please use another email');
-        }
 
         if (document.getElementsByClassName("password")[0].value == ""){
             alert("Password must be filled");
@@ -100,6 +91,41 @@
             console.log(user.passwordHash);
         }
 
+        var emailRegex = /^\w+@\w+(\.\w+)+$/;
+        var email = user.email;
+        if(!emailRegex.test(email)){
+            alert('Sorry, please enter the right email format');
+            return;
+        }
+
+        xmlHttp= new XMLHttpRequest();
+        xmlHttp.open("GET","api/email/"+user.email,true);
+        xmlHttp.onload = function () {
+            console.log("responseText",xmlHttp.responseText != "");
+            if(xmlHttp.responseText != ""){
+                alert('This email has been registered');
+            }else{
+                var json = JSON.stringify(user);
+                console.log("json=",json);
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "/api", true);
+                xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
+                xhttp.onload = function () {
+                    var users = JSON.parse(xhttp.responseText);
+                    console.log("user",users);
+                    if (xhttp.readyState == 4 && xhttp.status == "200") {
+                        console.table(users);
+                        alert('Thank you for your registration, you can now login');
+                    } else {
+                        console.log(xhttp.readyState,xhttp.status);
+                        console.error(users);
+                    }
+                };
+                xhttp.send(json);
+            }
+        }
+        xmlHttp.send(null);
+        /*
         var json = JSON.stringify(user);
         console.log("json=",json);
         var xhttp = new XMLHttpRequest();
@@ -107,15 +133,17 @@
         xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
         xhttp.onload = function () {
             var users = JSON.parse(xhttp.responseText);
-            console.log(users);
-            if (xhttp.readyState == 4 && xhttp.status == "201") {
+            console.log("user",users);
+            if (xhttp.readyState == 4 && xhttp.status == "200") {
                 console.table(users);
+                alert('Thank you for your registration, you can now login');
             } else {
+                console.log(xhttp.readyState,xhttp.status);
                 console.error(users);
             }
         };
-        xhttp.send(json);
-        alert("Registration finish, you can login in now");
+        xhttp.send(json);*/
+
     }
 
     function findUser(){
