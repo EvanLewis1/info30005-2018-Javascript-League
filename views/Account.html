@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style-for-head.css">
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
+    <script src="./Cookies.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
         <li ><a href="#" class = "active">Personal Information</a></li>
         <li><a>Donation</a></li>
         <li><a>Pick up Service</a><li>
-        <li ><a href="Account-setting.html">Setting</a></li>
+        <li ><a href="Account-setting.html" >Setting</a></li>
     </ul>
 </aside>
 
@@ -57,7 +58,7 @@
             document.getElementById("address").innerHTML = data.address;
         }
     };
-    xhttp.open("GET", "/api/id/"+id, true);
+    xhttp.open("GET", "/api/id/"+getCookie("username"), true);
     xhttp.send();
 
     function getUserId(){

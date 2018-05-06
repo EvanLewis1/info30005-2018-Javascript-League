@@ -1,6 +1,8 @@
 var data;
 var userEmail;
 
+var cookies = require("./Cookies.js");
+
 function myFunction() {
     userEmail = document.getElementsByClassName("Useremail");
     var password = document.getElementsByClassName("Userpassword");
@@ -24,6 +26,7 @@ function myFunction() {
             }
         }
     };
+    console.log("data=", data._id);
     xhttp.open("GET", "/api/email/"+userEmail[0].value, true);
     xhttp.send();
 }
