@@ -94,6 +94,17 @@ var findByEmail = function (req, res) {
     });
 }
 
+var updateItems = function(req,res){
+    Items.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, item) {
+        if (!err) {
+            res.send(item)
+        }else{
+            res.sendStatus(404)
+        }
+    });
+}
+
+module.exports.updataItems = updateItems;
 module.exports.creatitem = creatitem;
 module.exports.findAllItem = findAllItems;
 module.exports.findOneItem = findOneItem;
