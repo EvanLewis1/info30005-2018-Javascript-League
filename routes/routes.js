@@ -10,6 +10,7 @@ var controller = require('../controllers/controllers.js');
 
 //Find all list items
 router.get('/api',controller.findAllItem);
+
 router.get('/Login.html/api',controller.findAllItem);
 
 
@@ -36,11 +37,12 @@ router.put('/api/id/:id',controller.updataItems);
 //Load bin locations
 router.get("/loadBins", controller.loadBins);
 
+
 //add a device post
 router.post("/api/device",controller.addPost);
 
-//get all the posts of  unwanted devices
-router.get("/api/device",controller.findAllPosts);
+//Load all posts
+router.get("/loadAllPosts", controller.loadAllPosts);
 
 //find posts of devices by email
 router.get("/device/email/:email", controller.findPostsEmail);

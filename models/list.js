@@ -14,12 +14,12 @@ var listSchema = mongoose.Schema(
         "address": String,
         "phone": String,
         "email": {
-                type: String,
-                required: true
+            type: String,
+            required: true
         },
         "passwordHash": {
-                type: String,
-                required: true
+            type: String,
+            required: true
         }
     }
 );
@@ -32,6 +32,7 @@ var binsSchema = mongoose.Schema(
         "location": Object,
     }
 );
+
 
 var postSchema = mongoose.Schema(
     {
@@ -57,3 +58,4 @@ var postSchema = mongoose.Schema(
 module.exports = mongoose.model('lists',listSchema);
 module.exports = mongoose.model('bins',binsSchema);
 module.exports = mongoose.model('posts',postSchema);
+

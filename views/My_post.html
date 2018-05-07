@@ -42,24 +42,22 @@
 
 <script>
     var id = getCookie("username");
+    var data;
     var owner;
-    getOwner();
-    function getOwner(){
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                data = this.responseText;
-                console.log(data);
-                data = JSON.parse(data);
-                console.log(data);
-                owner = data.email;
-            }
-        };
-        xhttp.open("GET", "/api/id/"+getCookie("username"), true);
-        xhttp.send();
-    }
-    console.log("")
-
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/api/id/"+getCookie("username"), true);
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            data = this.responseText;
+            console.log(data);
+            data = JSON.parse(data);
+            console.log(data);
+            owner = data.email;
+            console.log("owner:", owner);
+        }
+    };
+    xhttp.send();
+    console.log("owner:", owner);
 </script>
 </body>
 </html>

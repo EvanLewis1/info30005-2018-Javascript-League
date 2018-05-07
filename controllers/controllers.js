@@ -4,6 +4,8 @@ var Items = mongoose.model('lists');
 var Bins = mongoose.model('bins');
 var Posts = mongoose.model("posts");
 
+
+
 var creatitem = function (req, res) {
     //console.log(req.body);
     var item = new Items({
@@ -51,6 +53,8 @@ var loadBins = function (req, res) {
     })
 };
 
+
+
 var findAllItems = function (req, res) {
     Items.find({}, function (err, lists) {
         if (!err) {
@@ -82,7 +86,7 @@ var findByName = function (req, res) {
             res.sendStatus(404);
         }
     });
-}
+};
 
 var findByEmail = function (req, res) {
     var itemEmail = req.params.email;
@@ -93,7 +97,7 @@ var findByEmail = function (req, res) {
             res.sendStatus(404);
         }
     });
-}
+};
 
 var updateItems = function(req,res){
     Items.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, item) {
@@ -103,7 +107,7 @@ var updateItems = function(req,res){
             res.sendStatus(404)
         }
     });
-}
+};
 
 /*add posts of devices to the post database*/
 var addPost = function(req,res){
@@ -123,7 +127,7 @@ var addPost = function(req,res){
             res.sendStatus(400);
         }
     });
-}
+};
 
 //get the posts by email
 var findPostsEmail = function (req, res) {
@@ -137,19 +141,17 @@ var findPostsEmail = function (req, res) {
     });
 };
 
-//get all the posts
-var findAllPosts = function (req, res) {
+var loadAllPosts = function(req, res){
+
     Posts.find({}, function (err, posts) {
         if (!err) {
-            //console.log(lists);
             res.send(posts);
         } else {
             res.sendStatus(400);
         }
-    });
+    })
 };
 
-module.exports.findAllPosts = findAllPosts;
 module.exports.findPostsEmail = findPostsEmail;
 module.exports.updataItems = updateItems;
 module.exports.creatitem = creatitem;
@@ -160,3 +162,5 @@ module.exports.findByEmail = findByEmail;
 module.exports.addBin = addBin;
 module.exports.loadBins = loadBins;
 module.exports.addPost = addPost;
+module.exports.loadAllPosts = loadAllPosts;
+
