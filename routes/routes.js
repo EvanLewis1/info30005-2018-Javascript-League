@@ -39,6 +39,12 @@ router.get("/loadBins", controller.loadBins);
 //add a device post
 router.post("/api/device",controller.addPost);
 
+//get all the posts of  unwanted devices
+router.get("/api/device",controller.findAllPosts);
+
+//find posts of devices by email
+router.get("/device/email/:email", controller.findPostsEmail);
+
 // define the home page route
 router.get('/', function(req, res) {
     res.send(path.join(__dirname, 'views/index.html'));

@@ -125,6 +125,32 @@ var addPost = function(req,res){
     });
 }
 
+//get the posts by email
+var findPostsEmail = function (req, res) {
+    var postEmail = req.params.email;
+    Posts.find({owner: postEmail}, function (err, posts) {
+        if (!err) {
+            res.send(posts);
+        } else {
+            res.sendStatus(404);
+        }
+    });
+};
+
+//get all the posts
+var findAllPosts = function (req, res) {
+    Posts.find({}, function (err, posts) {
+        if (!err) {
+            //console.log(lists);
+            res.send(posts);
+        } else {
+            res.sendStatus(400);
+        }
+    });
+};
+
+module.exports.findAllPosts = findAllPosts;
+module.exports.findPostsEmail = findPostsEmail;
 module.exports.updataItems = updateItems;
 module.exports.creatitem = creatitem;
 module.exports.findAllItem = findAllItems;
