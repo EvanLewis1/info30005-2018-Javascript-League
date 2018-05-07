@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var Items = mongoose.model('lists');
 var Bins = mongoose.model('bins');
+var Posts = mongoose.model("posts");
 
 var creatitem = function (req, res) {
     //console.log(req.body);
@@ -104,6 +105,26 @@ var updateItems = function(req,res){
     });
 }
 
+/*add posts of devices to the post database*/
+var addPost = function(req,res){
+    var post = new Posts({
+        "owner": req.body.owner,
+        "brand": req.body.brand,
+        "category":req.body.category,
+        "name": req.body.name,
+        "age": req.body.age,
+        "description": req.body.description,
+        "imageurl": req.body.imageurl
+    });
+    post.save(function (err, newItems) {
+        if (!err) {
+            res.send(newItems);
+        } else {
+            res.sendStatus(400);
+        }
+    });
+}
+
 module.exports.updataItems = updateItems;
 module.exports.creatitem = creatitem;
 module.exports.findAllItem = findAllItems;
@@ -112,3 +133,4 @@ module.exports.findByName = findByName;
 module.exports.findByEmail = findByEmail;
 module.exports.addBin = addBin;
 module.exports.loadBins = loadBins;
+module.exports.addPost = addPost;

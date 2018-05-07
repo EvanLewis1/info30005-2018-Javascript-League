@@ -33,6 +33,27 @@ var binsSchema = mongoose.Schema(
     }
 );
 
+var postSchema = mongoose.Schema(
+    {
+        "owner": String,
+        "brand": String,
+        "category": {
+            type: String,
+            required: true
+        },
+        "name": {
+            type:String,
+            required: true
+        },
+        "age": {
+            type: String,
+            required: true
+        },
+        "description": String,
+        "imageurl": String,
+    }
+);
 
 module.exports = mongoose.model('lists',listSchema);
 module.exports = mongoose.model('bins',binsSchema);
+module.exports = mongoose.model('posts',postSchema);

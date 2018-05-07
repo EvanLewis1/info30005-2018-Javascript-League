@@ -36,7 +36,8 @@ router.put('/api/id/:id',controller.updataItems);
 //Load bin locations
 router.get("/loadBins", controller.loadBins);
 
-
+//add a device post
+router.post("/api/device",controller.addPost);
 
 // define the home page route
 router.get('/', function(req, res) {

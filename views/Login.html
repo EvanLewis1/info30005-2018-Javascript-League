@@ -77,20 +77,24 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 data = this.responseText;
-                data = JSON.parse(data)[0];
-                console.log(data);
-                passwordLogin = data.passwordHash;
-                console.log(passwordLogin);
-                console.log("password = ",password);
-                console.log((passwordLogin == password));
+                if(data == ''){
+                    alert('This email has not register yet')
+                }else {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    passwordLogin = data.passwordHash;
+                    console.log(passwordLogin);
+                    console.log("password = ", password);
+                    console.log((passwordLogin == password));
 
-                setCookie("username",data._id,3);
-                console.log(getCookie("username"));
+                    setCookie("username", data._id, 3);
+                    console.log(getCookie("username"));
 
-                if (passwordLogin == password){
-                    window.location.href = "Account.html"+"?id="+data._id;
-                }else{
-                    alert('Sorry, your password is wrong. Please try again');
+                    if (passwordLogin == password) {
+                        window.location.href = "Account.html" + "?id=" + data._id;
+                    } else {
+                        alert('Sorry, your password is wrong. Please try again');
+                    }
                 }
             }
         };
