@@ -10,6 +10,7 @@ var controller = require('../controllers/controllers.js');
 
 //Find all list items
 router.get('/api',controller.findAllItem);
+
 router.get('/Login.html/api',controller.findAllItem);
 
 
