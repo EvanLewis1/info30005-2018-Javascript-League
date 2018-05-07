@@ -3,35 +3,47 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=""><meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>Donations</title>
 
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel = "stylesheet" href="../styles/where.css">
+    <link rel="stylesheet" href="../styles/where.css">
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style-for-head.css">
-    <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
-    <script src="./User.js"></script>
+    <link rel="stylesheet" href="../styles/bootstrap-theme.css" media="screen">
     <script src="./Cookies.js"></script>
-    <script src = "../models/Donations.js"></script>
+    <script src="../models/Donations.js"></script>
     <script>
 
-        Donations.loadAll(function(){
-            var list = document.getElementById("donations")
-            Donations.list.forEach(function(device){
-                console.log(3)
-                var item = document.createElement("li")
-                item.innerText = device.category
-                list.appendChild(item)
+        var CATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner']
+
+        loadDevices = function () {
+            Donations.loadAll(function () {
+                var list = document.getElementById("donations")
+                Donations.list.forEach(function (device) {
+                    var row = document.createElement("tr");
+                    var infoHTML;
+                    CATEGORIES.forEach(function(info){
+                        infoHTML = document.createElement("td")
+                        infoHTML.innerText = device[info];
+                        row.appendChild(infoHTML)
+                    })
+                    list.appendChild(row)
+                })
             })
-        })
+        }
+
+        window.addEventListener ?
+            window.addEventListener("load", loadDevices, false) :
+            window.attachEvent && window.attachEvent("onload", loadDevices);
 
     </script>
 </head>
 
 <body>
-<script src = nav.js></script>
+<script src=nav.js></script>
 
 <header id="head" class="secondary">
     <div class="container">
@@ -39,9 +51,24 @@
     </div>
 </header>
 
-<ul id = donations>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Brand</th>
+        <th scope="col">Category</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Description</th>
+        <th scope="col">Owner</th>
+    </tr>
+    </thead>
+    <tbody id = donations>
+
+    </tbody>
+</table>
 
 
 </ul>
 
-</body></html>
+</body>
+</html>
