@@ -11,7 +11,6 @@ Bins = {
 
                 data = this.responseText
                 Bins.list = JSON.parse(data)
-                console.log(typeof Bins.list)
                 callback()
             }
             else{

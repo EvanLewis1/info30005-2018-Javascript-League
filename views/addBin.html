@@ -2,32 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Where can recycle</title>
+    <title>Add a bin</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style-for-head.css">
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media="screen">
     <script src=../models/Bins.js></script>
 
     <script>
+
+        //Called once google api loads
         function createGeocoder() {
             geocoder = new google.maps.Geocoder()
         }
 
         function submitNewBin() {
 
-            console.log("Hello")
-            var input = document.getElementById("address")
 
+            //Get user input
+            var input = document.getElementById("address")
             var address = input.value
 
             geocoder.geocode({'address': address}, function (results, status) {
                 if (status === 'OK') {
-                    console.log("AJLD")
                     loc = [results[0].geometry.location.lat(), results[0].geometry.location.lng()]
-                    console.log(typeof(loc))
 
+                    //Add to database
                     Bins.addBin(loc)
-                   window.location = "/Where.html"
+
+                    //Return to where page
+                    window.location = "/Where.html"
 
                 }
                 else {
