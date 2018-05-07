@@ -44,7 +44,26 @@
     var id = getCookie("username");
     var data;
     var owner;
-    var xhttp = new XMLHttpRequest();
+    window.onload = function(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "/api/id/"+getCookie("username"), true);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                data = this.responseText;
+                console.log(data);
+                data = JSON.parse(data);
+                console.log(data);
+                owner = data.email;
+                console.log("owner:", owner);
+            }
+            console.log("owner2:",data);
+            owner = data.email;
+            console.log("owner3:", owner)
+        }
+        xhttp.send();
+        //console.log("owner4:",owner);
+    }
+    /*var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "/api/id/"+getCookie("username"), true);
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -57,7 +76,7 @@
         }
     };
     xhttp.send();
-    console.log("owner:", owner);
+    console.log("owner:", owner);*/
 </script>
 </body>
 </html>
