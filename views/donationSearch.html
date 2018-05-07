@@ -14,10 +14,18 @@
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
     <script src="./User.js"></script>
     <script src="./Cookies.js"></script>
+    <script src = "../models/Donations.js"></script>
     <script>
 
-
-        
+        Donations.loadAll(function(){
+            var list = document.getElementById("donations")
+            Donations.list.forEach(function(device){
+                console.log(3)
+                var item = document.createElement("li")
+                item.innerText = device.category
+                list.appendChild(item)
+            })
+        })
 
     </script>
 </head>
@@ -31,7 +39,7 @@
     </div>
 </header>
 
-<ul>
+<ul id = donations>
 
 
 </ul>

@@ -14,12 +14,12 @@ var listSchema = mongoose.Schema(
         "address": String,
         "phone": String,
         "email": {
-                type: String,
-                required: true
+            type: String,
+            required: true
         },
         "passwordHash": {
-                type: String,
-                required: true
+            type: String,
+            required: true
         }
     }
 );
@@ -33,6 +33,17 @@ var binsSchema = mongoose.Schema(
     }
 );
 
+var postsSchema = mongoose.Schema({
 
-module.exports = mongoose.model('lists',listSchema);
-module.exports = mongoose.model('bins',binsSchema);
+    owner: String,
+    brand: String,
+    category: String,
+    name: String,
+    age: String,
+    description: String,
+
+})
+
+module.exports = mongoose.model('lists', listSchema);
+module.exports = mongoose.model('bins', binsSchema);
+module.exports = mongoose.model('posts', postsSchema);

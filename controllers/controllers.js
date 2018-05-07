@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var Items = mongoose.model('lists');
 var Bins = mongoose.model('bins');
+var Posts = mongoose.model('posts')
 
 var creatitem = function (req, res) {
     //console.log(req.body);
@@ -44,6 +45,17 @@ var loadBins = function (req, res) {
     Bins.find({}, function (err, bins) {
         if (!err) {
             res.send(bins);
+        } else {
+            res.sendStatus(400);
+        }
+    })
+};
+
+var loadAllPosts = function(req, res){
+
+    Posts.find({}, function (err, posts) {
+        if (!err) {
+            res.send(posts);
         } else {
             res.sendStatus(400);
         }
@@ -112,3 +124,4 @@ module.exports.findByName = findByName;
 module.exports.findByEmail = findByEmail;
 module.exports.addBin = addBin;
 module.exports.loadBins = loadBins;
+module.exports.loadAllPosts = loadAllPosts

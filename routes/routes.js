@@ -37,6 +37,8 @@ router.put('/api/id/:id',controller.updataItems);
 //Load bin locations
 router.get("/loadBins", controller.loadBins);
 
+//Load all posts
+router.get("/loadAllPosts", controller.loadAllPosts);
 
 
 // define the home page route
