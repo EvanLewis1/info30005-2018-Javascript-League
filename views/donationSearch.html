@@ -17,28 +17,43 @@
     <script src="../models/Donations.js"></script>
     <script>
 
-        var CATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner']
+        var SIMPLECATEGORIES = ['brand', 'category', 'name']
+        var EXTRACATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner']
 
-        loadDevices = function () {
-            Donations.loadAll(function () {
-                var list = document.getElementById("donations")
+        var categories = SIMPLECATEGORIES
+
+        function drawList( ){
+            var tableCategories = document.getElementById("categories")
+            tableCategories.innerHTML =''
+            categories.forEach(function(category){
+                var th = document.createElement("th")
+                th.innerText = category.charAt(0).toUpperCase() + category.slice(1);
+                tableCategories.appendChild(th)
+            })
+
+
+             var list = document.getElementById("donations")
+             list.innerHTML = ''
                 Donations.list.forEach(function (device) {
                     var row = document.createElement("tr");
                     row.setAttribute("class", "selectable")
                     row.onclick = function(){
-
-                        window.location = "/donationInfo.html"
-                    }
+                        Donations.list = [device]
+                        categories = EXTRACATEGORIES
+                        drawList()
+                    };
                     var infoHTML;
-                    CATEGORIES.forEach(function(info){
+                    categories.forEach(function(info){
                         infoHTML = document.createElement("td")
                         infoHTML.innerText = device[info];
                         row.appendChild(infoHTML)
                     })
                     list.appendChild(row)
                 })
-            })
         }
+
+        loadDevices = function () {
+            Donations.loadAll(drawList)}
 
         window.addEventListener ?
             window.addEventListener("load", loadDevices, false) :
@@ -58,13 +73,8 @@
 
 <table class="table">
     <thead>
-    <tr>
-        <th scope="col">Brand</th>
-        <th scope="col">Category</th>
-        <th scope="col">Name</th>
-        <th scope="col">Age</th>
-        <th scope="col">Description</th>
-        <th scope="col">Owner</th>
+    <tr  id = categories>
+
     </tr>
     </thead>
     <tbody id = donations>

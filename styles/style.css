@@ -72,6 +72,9 @@ body {
 .component{
     width: 200px;
 }
+.component:hover{
+    width:220px;
+}
 
 /*
 .header {
