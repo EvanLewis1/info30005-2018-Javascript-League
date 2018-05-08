@@ -1,5 +1,5 @@
 ul p{font-style: italic}
-body {padding:50px}
+body {padding-top:50px; padding-right: 50px; padding-left:50px}
 li a.inactive {color: red}
 div.layout.menu {background-color: lightgrey}
 div.frame{float: inherit; background-color: orange; border: solid black 5px; border-radius: 25px; padding-left: 25px; padding-right :25px}
@@ -38,10 +38,13 @@ div.large {width : 535px}
 button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
 button.myBigClose:hover {opacity: 0.3}
 
+div.popup {position: absolute; width: 700px; height: 500px; left: 300px; background-color: blue; border-radius: 10px;
+    z-index: 2;}
+div.myHidden {visibility: hidden;}
+
+
 /* Why page*/
 
-div.popup {position: absolute; width: 700px; height: 500px; left: 300px; background-color: blue; border-radius: 10px}
-div.myHidden {visibility: hidden;}
 div.green{background-color: #00cd00}
 div.orange{background-color: orange}
 div.blue {background-color: blue}

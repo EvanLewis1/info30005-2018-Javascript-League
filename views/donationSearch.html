@@ -17,8 +17,9 @@
     <script src="../models/Donations.js"></script>
     <script>
 
-        var SIMPLECATEGORIES = ['brand', 'category', 'name']
-        var EXTRACATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner']
+        var SIMPLECATEGORIES = ['brand', 'category', 'name'];
+        var EXTRACATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner'];
+        var OWNERCATEGORIES = ['firstname','lastname','phone','email']
 
         var categories = SIMPLECATEGORIES
 
@@ -29,8 +30,43 @@
                 var th = document.createElement("th")
                 th.innerText = category.charAt(0).toUpperCase() + category.slice(1);
                 tableCategories.appendChild(th)
-            })
+            });
 
+            function drawOwnerDetails(email){
+                var user;
+
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                data = this.responseText
+                                user = JSON.parse(data)
+
+
+                                var header = document.getElementById("ownerTitles")
+                                header.innerHTML = ''
+                                var info = document.getElementById("ownerInfo")
+                                info.innerHTML = ''
+
+                                OWNERCATEGORIES.forEach(function(category){
+                                    var th = document.createElement("th");
+                                    th.innerText = category;
+                                    header.appendChild(th);
+
+                                    var td = document.createElement("td");
+                                    user[category] ? td.innerText = user[category]:td.innerText = "N/A";
+                                    info.appendChild(td)
+                                })
+                            }
+                            else {
+
+                                console.log("xhttp request failed?")
+                            }
+                            ;
+                        }
+                        xhttp.open("GET", "/api/email/" + email, true);
+                        xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                        xhttp.send();
+            }
 
              var list = document.getElementById("donations")
              list.innerHTML = ''
@@ -41,6 +77,7 @@
                         Donations.list = [device]
                         categories = EXTRACATEGORIES
                         drawList()
+                        drawOwnerDetails(device.owner)
                     };
                     var infoHTML;
                     categories.forEach(function(info){
@@ -82,6 +119,16 @@
     </tbody>
 </table>
 
+<table class="table">
+    <thead>
+    <tr  id = ownerTitles>
+
+    </tr>
+    </thead>
+    <tbody id = ownerInfo>
+
+    </tbody>
+</table>
 
 </ul>
 
