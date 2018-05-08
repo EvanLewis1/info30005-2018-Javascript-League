@@ -24,15 +24,21 @@ td {width: 14%}
 td.active {background-color: orange}
 
 
-/*How page*/
+/*Home page/ How page*/
 button.how {width: 100px; height: 100px; border-radius: 100px; border: 2px solid blue}
+button.how:hover{
+    opacity: 0.5;}
 div.centre {margin: auto}
 div.small {width: 100px}
 div.large {width : 535px}
-.re_word {padding-left: 50px; padding-right: 50px; display: block}
+.re_word {font-size: 20px; padding-left: 50px; padding-right: 50px; display: block}
+.left.how {float: left; margin-top:180px}
+.right.how{float: right; margin-top:180px}
 
+button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
+button.myBigClose:hover {opacity: 0.3}
 
-/* Home page // Why page*/
+/* Why page*/
 
 div.popup {position: absolute; width: 700px; height: 500px; left: 300px; background-color: blue; border-radius: 10px}
 div.myHidden {visibility: hidden;}
@@ -42,7 +48,6 @@ div.blue {background-color: blue}
 div.red {background-color: #ff72c6}
 div.middle {text-align: center}
 
-button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
 
 /*DonationsSearch*/
 .donations.list {}
