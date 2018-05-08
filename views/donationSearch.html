@@ -17,23 +17,79 @@
     <script src="../models/Donations.js"></script>
     <script>
 
-        var CATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner']
+        var SIMPLECATEGORIES = ['brand', 'category', 'name'];
+        var EXTRACATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner'];
+        var OWNERCATEGORIES = ['firstname','lastname','phone','email']
 
-        loadDevices = function () {
-            Donations.loadAll(function () {
-                var list = document.getElementById("donations")
+        var categories = SIMPLECATEGORIES
+
+        function drawList( ){
+            var tableCategories = document.getElementById("categories")
+            tableCategories.innerHTML =''
+            categories.forEach(function(category){
+                var th = document.createElement("th")
+                th.innerText = category.charAt(0).toUpperCase() + category.slice(1);
+                tableCategories.appendChild(th)
+            });
+
+            function drawOwnerDetails(email){
+                var user;
+
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                data = this.responseText
+                                user = JSON.parse(data)
+
+
+                                var header = document.getElementById("ownerTitles")
+                                header.innerHTML = ''
+                                var info = document.getElementById("ownerInfo")
+                                info.innerHTML = ''
+
+                                OWNERCATEGORIES.forEach(function(category){
+                                    var th = document.createElement("th");
+                                    th.innerText = category;
+                                    header.appendChild(th);
+
+                                    var td = document.createElement("td");
+                                    user[category] ? td.innerText = user[category]:td.innerText = "N/A";
+                                    info.appendChild(td)
+                                })
+                            }
+                            else {
+
+                                console.log("xhttp request failed?")
+                            }
+                        };
+                        xhttp.open("GET", "/api/email/" + email, true);
+                        xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                        xhttp.send();
+            }
+
+             var list = document.getElementById("donations")
+             list.innerHTML = ''
                 Donations.list.forEach(function (device) {
                     var row = document.createElement("tr");
+                    row.setAttribute("class", "selectable")
+                    row.onclick = function(){
+                        Donations.list = [device]
+                        categories = EXTRACATEGORIES
+                        drawList()
+                        drawOwnerDetails(device.owner)
+                    };
                     var infoHTML;
-                    CATEGORIES.forEach(function(info){
+                    categories.forEach(function(info){
                         infoHTML = document.createElement("td")
                         infoHTML.innerText = device[info];
                         row.appendChild(infoHTML)
                     })
                     list.appendChild(row)
                 })
-            })
         }
+
+        loadDevices = function () {
+            Donations.loadAll(drawList)}
 
         window.addEventListener ?
             window.addEventListener("load", loadDevices, false) :
@@ -47,19 +103,14 @@
 
 <header id="head" class="secondary">
     <div class="container">
-        <h1>Donations</h1>
+        <h1>Search For and Pick Up Other's Old Devices</h1>
     </div>
 </header>
 
 <table class="table">
     <thead>
-    <tr>
-        <th scope="col">Brand</th>
-        <th scope="col">Category</th>
-        <th scope="col">Name</th>
-        <th scope="col">Age</th>
-        <th scope="col">Description</th>
-        <th scope="col">Owner</th>
+    <tr  id = categories>
+
     </tr>
     </thead>
     <tbody id = donations>
@@ -67,6 +118,16 @@
     </tbody>
 </table>
 
+<table class="table">
+    <thead>
+    <tr  id = ownerTitles>
+
+    </tr>
+    </thead>
+    <tbody id = ownerInfo>
+
+    </tbody>
+</table>
 
 </ul>
 

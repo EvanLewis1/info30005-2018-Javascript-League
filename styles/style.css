@@ -1,5 +1,5 @@
 ul p{font-style: italic}
-body {padding:50px}
+body {padding-top:50px; padding-right: 50px; padding-left:50px}
 li a.inactive {color: red}
 div.layout.menu {background-color: lightgrey}
 div.frame{float: inherit; background-color: orange; border: solid black 5px; border-radius: 25px; padding-left: 25px; padding-right :25px}
@@ -10,6 +10,7 @@ nav ul li {width: 170px}
 
 
 /*Why page*/
+div.whypage {padding-top: 10px; padding-left:200px; padding-right:200px}
 div.top {height: 400px; }
 div.left {width: 50%; height: 100%; float:left}
 div.right {width: 50%; height: 100%; float:right}
@@ -24,28 +25,39 @@ td {width: 14%}
 td.active {background-color: orange}
 
 
-/*How page*/
-button.how {width: 100px; height: 100px; border-radius: 100px; border: 2px solid blue}
+/*Home page/ How page*/
+button.how {width: 100px; height: 100px; border-radius: 100px; border: 2px solid blue; font-size:25px}
+button.how:hover{
+    opacity: 0.5;}
 div.centre {margin: auto}
 div.small {width: 100px}
 div.large {width : 535px}
-.re_word {padding-left: 50px; padding-right: 50px; display: block}
+.re_word {font-size: 20px; padding-left: 50px; padding-right: 50px; display: block}
+.left.how {float: left; margin-top:180px}
+.right.how{float: right; margin-top:180px}
 
+button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
+button.myBigClose:hover {opacity: 0.3}
 
-/* Home page // Why page*/
-
-div.popup {position: absolute; width: 700px; height: 500px; left: 300px; background-color: blue; border-radius: 10px}
+div.popup {position: absolute; width: 900px; height: 500px; left: 300px; background-color: blue; border-radius: 10px;
+    z-index: 2;}
 div.myHidden {visibility: hidden;}
+
+
+/* Why page*/
+
 div.green{background-color: #00cd00}
 div.orange{background-color: orange}
 div.blue {background-color: blue}
 div.red {background-color: #ff72c6}
 div.middle {text-align: center}
 
-button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
 
 /*DonationsSearch*/
 .donations.list {}
+tr.selectable:hover {
+    background-color: #3d84e6
+}
 
 
 nav.navbar-header{
@@ -57,12 +69,21 @@ body {
     background: #f1f1f1;
 }
 
+/*What page*/
 #device{
     width: 400px;
 }
 
+#qualities > h1{
+    text-align: center;
+}
+
+/**/
 .component{
     width: 200px;
+}
+.component:hover{
+    width:220px;
 }
 
 /*
@@ -135,6 +156,7 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
+
 *{
     margin:0;
     padding:0;

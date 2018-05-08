@@ -17,7 +17,6 @@ router.get('/Login.html/api',controller.findAllItem);
 //find list item by id
 router.get('/api/id/:id',controller.findOneItem);
 
-
 //find list item by name
 router.get('/api/name/:name',controller.findByName);
 
@@ -36,7 +35,6 @@ router.put('/api/id/:id',controller.updataItems);
 
 //Load bin locations
 router.get("/loadBins", controller.loadBins);
-
 
 //add a device post
 router.post("/api/device",controller.addPost);

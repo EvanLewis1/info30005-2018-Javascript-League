@@ -13,10 +13,7 @@ Bins = {
                 Bins.list = JSON.parse(data)
                 callback()
             }
-            else{
-
-                console.log("xhttp request failed?")
-            }
+            else{}
             ;
         }
         xhttp.open("GET", "/loadBins", true);
@@ -33,10 +30,7 @@ Bins = {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
             }
-            else{
-
-                console.log("xhttp request failed?")
-            }
+            else{}
             ;
         }
         xhttp.open("POST", "/addBin", true);
