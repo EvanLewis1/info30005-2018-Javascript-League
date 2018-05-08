@@ -35,13 +35,13 @@
 
                 }
                 else {
-                    alert('Geocode was not successful for the following reason: ' + status);
+                    document.getElementById("instruction").innerText ="Cannot find the given address"
                 }
             });
         }
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAj832WWA8O7gZc0VPIuZ7Mv62ecnbzpo&callback=createGeocoder"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAj832WWA8O7gZc0VPIuZ7Mv62ecnbzpo&region=AU&callback=createGeocoder"></script>
 
 </head>
 <body>
@@ -49,8 +49,13 @@
 <script src=nav.js></script>
 
 
+<h3 id = instruction>Type your the address of a new bin here</h3>
+<div>
 <input id=address type="text">
 <button type="button" onclick=submitNewBin()>Add</button>
+</div>
+<a href = "Where.html">Cancel</a>
+
 
 
 </body>
