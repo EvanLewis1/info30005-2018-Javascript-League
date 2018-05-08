@@ -39,6 +39,10 @@
         Age: <input type="text" name="deviceAge" class="deviceAge" size="20" maxlength="40"/><br/><br>
         Description: <br><td><textarea name="description" class="deviceDes" cols="50" rows="4"   style="OVERFLOW:   hidden"></textarea></td><br/><br>
         Images: <input type="file" name="imgfile" class="deviceImg"><br>
+        My contact details:<br>
+        Name:<input type="text" name="myName" class="myName" size="20" maxlength="40"/><br/><br>
+        Email:<input type="text" name="myEmail" class="myEmail" size="20" maxlength="40"/><br/><br>
+        Phone Number:<input type="text" name="myPhone" class="myPhone" size="20" maxlength="40"/><br/><br>
         <input type="button" value="submit" class= "btn-outline-primary" id="mybutton"/>
     </form>
 </div>
@@ -59,6 +63,12 @@
         console.log(device.description);
         device.image = document.getElementsByClassName("deviceImg").value;
         console.log(device.image);
+        device.myname = document.getElementsByClassName("myName").value;
+        console.log(device.myname);
+        device.email = document.getElementsByClassName("myEamil").value;
+        console.log(device.email);
+        device.phone_number = document.getElementsByClassName("myPhone").value;
+        console.log(device.phone_number);
 
         var xhttp = new XMLHttpRequest();
         var json = JSON.stringify(device);
