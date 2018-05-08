@@ -24,6 +24,11 @@
                 var list = document.getElementById("donations")
                 Donations.list.forEach(function (device) {
                     var row = document.createElement("tr");
+                    row.setAttribute("class", "selectable")
+                    row.onclick = function(){
+
+                        window.location = "/donationInfo.html"
+                    }
                     var infoHTML;
                     CATEGORIES.forEach(function(info){
                         infoHTML = document.createElement("td")
@@ -47,7 +52,7 @@
 
 <header id="head" class="secondary">
     <div class="container">
-        <h1>Donations</h1>
+        <h1>Search For and Pick Up Other's Old Devices</h1>
     </div>
 </header>
 
