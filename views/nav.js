@@ -35,7 +35,7 @@ document.write('<div class="navbar navbar-inverse">\n' +
     '                    <ul class="dropdown-menu">\n' +
     '                        <li><a href="Account.html">Account information</a></li>\n' +
     '                        <li><a href="Login.html">Login in</a></li>\n' +
-    '                        <li><a href="#">My action</a></li>\n' +
+    '                        <li><a href="My_post.html">My post</a></li>\n' +
     '                    </ul>\n' +
     '                </li>\n' +
     '            </ul>\n' +

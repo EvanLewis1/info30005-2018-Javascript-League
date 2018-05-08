@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style-for-head.css">
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media = "screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./Cookies.js"></script>
     <style>
         .midcolumn {
@@ -61,28 +62,7 @@
         </ul>
     </div>
 
-    <script>
-        var id = getCookie("username");
-        var email = getCookie("useremail");
-        console.log("useremail", email);
-        console.log("userid", id);
-        document.getElementById("useremail").innerHTML = email;
 
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                data = this.responseText;
-                console.log(data);
-                data = JSON.parse(data);
-                console.log(data);
-                for (var i = 0; i < data.length; i++){
-
-                }
-            }
-        };
-        xhttp.open("GET", "/device/email/"+email, true);
-        xhttp.send();
-    </script>
 
     <div class="posts">
 
@@ -93,6 +73,56 @@
     <input type="button" class= "btn-outline-primary" value="Create New Post" onclick="window.open('postForm.html')">
 
 </div>
+
+<script>
+    var id = getCookie("username");
+    var email = getCookie("useremail");
+    console.log("useremail", email);
+    console.log("userid", id);
+    document.getElementById("useremail").innerHTML = email;
+
+    var descrite = ['brand', 'category', 'name', 'age', 'description'];
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            data = this.responseText;
+            console.log(data);
+            data = JSON.parse(data);
+            console.log(data);
+            for (var i = 0; i < data.length; i++){
+                var unitLink = document.createElement("ul");
+                var count = document.createElement('li');
+                var number = document.createTextNode("My post"+(i+1));
+                count.appendChild(number);
+                unitLink.appendChild(count);
+
+                console.log(descrite.length);
+                var information = data[i];
+                for (var j = 0; j < descrite.length; j++){
+                    console.log(descrite[j]);
+                    var type = descrite[j]
+                    console.log(information[type]);
+                    var para = document.createElement("li");
+                    var node = document.createTextNode(capitalizeFirstLetter(type)+": "+information[type]);
+                    para.appendChild(node);
+                    unitLink.appendChild(para);
+                }
+
+                var element = document.getElementsByClassName("introduce")[0];
+                element.appendChild(unitLink);
+                console.log(data[i]);
+            }
+        }
+    };
+
+    xhttp.open("GET", "/device/email/"+email, true);
+    xhttp.send();
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+</script>
 
 </body>
 </html>
