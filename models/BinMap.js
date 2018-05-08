@@ -103,7 +103,7 @@ function searchPostCode() {
 
         }
         else {
-            alert('Geocode was not successful for the following reason: ' + status);
+            document.getElementById("changeLocation").innerText = "Can't find given location"
         }
     });
 }

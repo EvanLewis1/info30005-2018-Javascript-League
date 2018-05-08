@@ -128,6 +128,12 @@
 
 
         function selectDevice(i) {
+
+            for(var x = 0; x < 3;x++){
+                            document.getElementById("button" + x).classList.remove("selected")
+            }
+            document.getElementById("button" + i).classList.add("selected")
+
             document.getElementById("pleaseSelect").setAttribute("style", "visibility:hidden")
             document.getElementById("device").setAttribute("src", devices[i].src)
 
@@ -196,16 +202,14 @@
 </header>
 
 
-<div class="row">
+<div>
 
     <div class="leftcolumn">
-        <aside>
             <ul>
-                <li><a class=device onclick=selectDevice(1)>Computer</a></li>
-                <li><a class=device onclick=selectDevice(0)>Phones</a></li>
-                <li><a class=device onclick=selectDevice(2)>Printer</a></li>
+                <li><a id = "button1" class=device onclick=selectDevice(1)>Computer</a></li>
+                <li><a id = "button0" class=device onclick=selectDevice(0)>Phones</a></li>
+                <li><a id = "button2" class=device onclick=selectDevice(2)>Printer</a></li>
             </ul>
-        </aside>
     </div>
 
     <div class="midcolumn">

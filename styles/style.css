@@ -10,6 +10,7 @@ nav ul li {width: 170px}
 
 
 /*Why page*/
+div.whypage {padding-top: 10px; padding-left:200px; padding-right:200px}
 div.top {height: 400px; }
 div.left {width: 50%; height: 100%; float:left}
 div.right {width: 50%; height: 100%; float:right}
@@ -71,6 +72,10 @@ body {
 /*What page*/
 #device{
     width: 400px;
+}
+
+#qualities > h1{
+    text-align: center;
 }
 
 /**/
