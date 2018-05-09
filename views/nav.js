@@ -46,6 +46,6 @@ document.write('<div class="navbar navbar-inverse">\n' +
     '<!-- /.navbar -->\n' +
     '\n' +
     '<!-- JavaScript libs are placed at the end of the document so the pages load faster -->\n' +
-    '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>\n' +
-    '<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>\n' +
+    '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>\n' +
+    '<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>\n' +
     '<script src="assets/js/custom.js"></script>')
