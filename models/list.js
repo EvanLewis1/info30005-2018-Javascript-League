@@ -36,7 +36,10 @@ var binsSchema = mongoose.Schema(
 
 var postSchema = mongoose.Schema(
     {
-        "owner": String,
+        "owner": {
+            type: String,
+            required: true
+        },
         "brand": String,
         "category": {
             type: String,

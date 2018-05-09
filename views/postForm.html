@@ -34,16 +34,13 @@
 
 <div class = 'rightcolumn'>
     <form id="myform" action="table.html" method="post" target="_blank">
+        Category: <input type="text" name="deviceCate" class="deviceCate" size="20" maxlength="40"/><br/><br>
         Name of Device: <input type="text" name="deviceName" class="deviceName" size="20" maxlength="40"/><br/><br>
         Brand: <input type="text" name="deviceBrand" class="deviceBrand" size="20" maxlength="40"/><br/><br>
         Age: <input type="text" name="deviceAge" class="deviceAge" size="20" maxlength="40"/><br/><br>
         Description: <br><td><textarea name="description" class="deviceDes" cols="50" rows="4"   style="OVERFLOW:   hidden"></textarea></td><br/><br>
-        Images: <input type="file" name="imgfile" class="deviceImg"><br>
-        My contact details:<br>
-        Name:<input type="text" name="myName" class="myName" size="20" maxlength="40"/><br/><br>
-        Email:<input type="text" name="myEmail" class="myEmail" size="20" maxlength="40"/><br/><br>
-        Phone Number:<input type="text" name="myPhone" class="myPhone" size="20" maxlength="40"/><br/><br>
-        <input type="button" value="submit" class= "btn-outline-primary" id="mybutton"/>
+        ImagesUrl: <input type="text" name="imgfile" class="deviceImg"><br>
+        <input type="button" value="submit" class= "btn-outline-primary" id="mybutton" onclick="postDevice()"/>
     </form>
 </div>
 </body>
@@ -51,29 +48,27 @@
 
 
 <script>
+    var useremail = getCookie("useremail");
     function postDevice() {
         var device = {};
-        device.name = document.getElementsByClassName("deviceName").value;
+        device.owner = useremail;
+        device.category = document.getElementsByClassName("deviceCate")[0].value;
+
+        device.name = document.getElementsByClassName("deviceName")[0].value;
         console.log(device.name);
-        device.brand = document.getElementsByClassName("deviceBrand").value;
+        device.brand = document.getElementsByClassName("deviceBrand")[0].value;
         console.log(device.brand);
-        device.age = document.getElementsByClassName("deviceAge").value;
+        device.age = document.getElementsByClassName("deviceAge")[0].value;
         console.log(device.age);
-        device.description = document.getElementsByClassName("deviceDes").value;
+        device.description = document.getElementsByClassName("deviceDes")[0].value;
         console.log(device.description);
-        device.image = document.getElementsByClassName("deviceImg").value;
+        device.imageurl = document.getElementsByClassName("deviceImg")[0].value;
         console.log(device.image);
-        device.myname = document.getElementsByClassName("myName").value;
-        console.log(device.myname);
-        device.email = document.getElementsByClassName("myEamil").value;
-        console.log(device.email);
-        device.phone_number = document.getElementsByClassName("myPhone").value;
-        console.log(device.phone_number);
 
         var xhttp = new XMLHttpRequest();
         var json = JSON.stringify(device);
         console.log("json=",json);
-        xhttp.open("POST", "/api", true);
+        xhttp.open("POST", "/api/device", true);
         xhttp.setRequestHeader('Content-type','application/json; charset=utf-8');
         xhttp.onload = function () {
             var devices = JSON.parse(xhttp.responseText);
@@ -87,6 +82,6 @@
             }
         };
         xhttp.send(json);
-        xmlHttp.send(null);
+
     }
 </script>
