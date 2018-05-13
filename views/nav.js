@@ -7,26 +7,27 @@ window.onload = function(){
         link = links[i]
         //if (link.getAttribute("href") == window.location){
         if (window.location.href.indexOf(link.getAttribute("href").substring(1)) != -1){
-            link.setAttribute("class", "selected")
+            link.classList.add("selected")
+
         }
     }
 }
 
-document.write('<div class="navbar navbar-inverse">\n' +
-    '    <div class="container">\n' +
-    '        <div class="navbar-header">\n' +
-    '            <!-- Button for smallest screens -->\n' +
+document.write('<div class="navbar navbar-inverse">' +
+    '    <div class="container">' +
+    '        <div class="navbar-header">' +
+    '            <!-- Button for smallest screens -->' +
     '            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>\n' +
     '            <a class="navbar-brand" href="index.html">\n' +
     '                <!--<span style="color: grey">E-Recycling</span> -->' +
     '                <div id = "logo"><img src = ../assets/images/logo.png></div></a>\n' +
-    '        </div>\n' +
+    '        </div>' +
     '        <div class="navbar-collapse collapse">\n' +
     '            <ul class="nav navbar-nav pull-right mainNav">\n' +
-    '                <li><a class=layoutlink href="index.html">Home</a></li>\n' +
-    '                <li><a class=layoutlink href="What.html">What</a></li>\n' +
-    '                <li><a class=layoutlink href="why.html">Why</a></li>\n' +
-    '                <li><a class=layoutlink href="Where.html">Where</a></li>\n' +
+    `                <li><a class='layoutlink fixLayout' href="index.html">Home</a></li>\n` +
+    '                <li><a class=layoutlink href="What.html">What\'s In My E-waste?</a></li>\n' +
+    '                <li><a class=layoutlink href="why.html">Why Should I Care?</a></li>\n' +
+    '                <li><a class=layoutlink href="Where.html">E-bins</a></li>\n' +
     '                <li><a class=layoutlink href="Donation.html">Donation</a></li>'+
     '                <li><a class=layoutlink href="donationSearch.html">Free Devices</a></li>'+
     '                <li><a class=layoutlink href="Personal_privacy.html">Information Privacy</a></li>\n' +
@@ -49,4 +50,4 @@ document.write('<div class="navbar navbar-inverse">\n' +
     // '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>\n' +
     // '<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>\n' +
     // '<script src="assets/js/custom.js"></script>')
-)
+);

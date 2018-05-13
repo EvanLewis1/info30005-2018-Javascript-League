@@ -26,6 +26,12 @@ td.active {background-color: orange}
 
 
 /*Home page/ How page*/
+
+.halfPage{width: 700px;
+    float: left;
+    margin-top: 10px;
+}
+
 button.how {width: 100px; height: 100px; border-radius: 100px; border: 2px solid blue; font-size:25px}
 button.how:hover{
     opacity: 0.5;}
@@ -43,7 +49,7 @@ div.popup {position: absolute; width: 900px; height: 500px; left: 300px; backgro
     z-index: 2;}
 div.myHidden {visibility: hidden;}
 
-
+.largeText{font-size:30px}
 /* Why page*/
 
 div.green{background-color: #00cd00}
@@ -59,6 +65,9 @@ tr.selectable:hover {
     background-color: #3d84e6
 }
 
+.fixLayout{
+    margin-left: -100px;
+}
 
 nav.navbar-header{
     color: cornflowerblue;
