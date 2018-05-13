@@ -79,6 +79,11 @@ body {
 }
 
 /**/
+.imgContainer{
+    width: 220px;
+    float: left;
+}
+
 .component{
     width: 200px;
 }
