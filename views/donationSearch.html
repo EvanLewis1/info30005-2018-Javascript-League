@@ -15,86 +15,7 @@
     <link rel="stylesheet" href="../styles/bootstrap-theme.css" media="screen">
     <script src="./Cookies.js"></script>
     <script src="../models/Donations.js"></script>
-    <script>
-
-        var SIMPLECATEGORIES = ['brand', 'category', 'name'];
-        var EXTRACATEGORIES = ['brand', 'category', 'name', 'age', 'description','owner'];
-        var OWNERCATEGORIES = ['firstname','lastname','phone','email']
-
-        var categories = SIMPLECATEGORIES
-
-        function drawList( ){
-            var tableCategories = document.getElementById("categories")
-            tableCategories.innerHTML =''
-            categories.forEach(function(category){
-                var th = document.createElement("th")
-                th.innerText = category.charAt(0).toUpperCase() + category.slice(1);
-                tableCategories.appendChild(th)
-            });
-
-            function drawOwnerDetails(email){
-                var user;
-
-                        var xhttp = new XMLHttpRequest();
-                        xhttp.onreadystatechange = function () {
-                            if (this.readyState == 4 && this.status == 200) {
-                                data = this.responseText
-                                user = JSON.parse(data)
-
-
-                                var header = document.getElementById("ownerTitles")
-                                header.innerHTML = ''
-                                var info = document.getElementById("ownerInfo")
-                                info.innerHTML = ''
-
-                                OWNERCATEGORIES.forEach(function(category){
-                                    var th = document.createElement("th");
-                                    th.innerText = category;
-                                    header.appendChild(th);
-
-                                    var td = document.createElement("td");
-                                    user[category] ? td.innerText = user[category]:td.innerText = "N/A";
-                                    info.appendChild(td)
-                                })
-                            }
-                            else {
-
-                                console.log("xhttp request failed?")
-                            }
-                        };
-                        xhttp.open("GET", "/api/email/" + email, true);
-                        xhttp.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-                        xhttp.send();
-            }
-
-             var list = document.getElementById("donations")
-             list.innerHTML = ''
-                Donations.list.forEach(function (device) {
-                    var row = document.createElement("tr");
-                    row.setAttribute("class", "selectable")
-                    row.onclick = function(){
-                        Donations.list = [device]
-                        categories = EXTRACATEGORIES
-                        drawList()
-                        drawOwnerDetails(device.owner)
-                    };
-                    var infoHTML;
-                    categories.forEach(function(info){
-                        infoHTML = document.createElement("td")
-                        infoHTML.innerText = device[info];
-                        row.appendChild(infoHTML)
-                    })
-                    list.appendChild(row)
-                })
-        }
-
-        loadDevices = function () {
-            Donations.loadAll(drawList)}
-
-        window.addEventListener ?
-            window.addEventListener("load", loadDevices, false) :
-            window.attachEvent && window.attachEvent("onload", loadDevices);
-
+    <script src = donationSearch.js>
     </script>
 </head>
 
@@ -106,6 +27,8 @@
         <h1>Search For and Pick Up Other's Old Devices</h1>
     </div>
 </header>
+
+<input class = donationSearch placeholder="Search for a device..." onkeyup=drawList(this.value)>
 
 <table class="table">
     <thead>
@@ -129,7 +52,7 @@
     </tbody>
 </table>
 
-</ul>
+<button onclick = window.loadDevices()>Reset</button>
 
 </body>
 </html>

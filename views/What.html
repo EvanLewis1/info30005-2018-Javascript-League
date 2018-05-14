@@ -30,7 +30,6 @@
                         name: "Battery",
                         src: "../assets/images/phone_batteries.png",
                         qualities: [
-                            {title: "Expensive", text: "Cobalt Price: 40.26 USD/lb\n" + "Zinc Price: 1.42 USD/lb\n" + "Copper Price: 3.08 USD/lb"},
                             {title: "Disposal", text: "Always read the label on batteries before disposing. Batteries can cause fires if disposed of incorrectly"},
                             {title: "Hazardous", text: "The lithium-ion and nickel-metal hydride batteries contain heavy metals such as cobalt, zinc, and copper." +
                                 " Many of these chemicals are Persistent Bioaccumulative Toxins (PBTs) and have the potential to be released into the air and groundwater when burned in incinerators or disposed of in landfills, thus creating unnecessary threats to human health and the environment."},
@@ -43,7 +42,7 @@
                         qualities: [
                             {title: "Expensive", text: "Nickel Price: 6.34 USD/lb\n" + "Silver Price: 523 USD/kg\n" + "Zinc Price: 1.42 USD/lb"},
                             {title: "Hazardous", text: "Circuitry made mostly of copper is soldered to the board with protective coatings and adhesives. The board is made of epoxy resin or fibreglass and generally coated with gold plating." +
-                                " Other precious metals and hazardous substances in the PCB are arsenic (in chips made from gallium arsenide), antimony, beryllium, brominated flame retardants, cadmium, lead(used in the solder that joins the parts), nickel, palladium, silver, tantalum and zinc." +
+                                " Other precious metals and hazardous substances in the PCB are arsenic (in chips made from gallium arsenide), antimony, beryllium, brominated flame retardants, cadmium, lead, nickel, palladium, silver, tantalum and zinc." +
                                 " The lead and brominated flame retardants have the highest environmental impact due to their levels of toxicity and persistence in the environment."},
                         ]
                     },
@@ -69,7 +68,6 @@
                         name: "Mainboard",
                         src: "../assets/images/motherboard.png",
                         qualities: [
-                            {title: "Expensive", text: "Cadmium Price: 0.6 USD/kg\n" + "Mercury Price: 0.3 USD/kg\n" + "Chromium Price: 2.80 USD/kg"},
                             {title: "Reusable", text: "Motherboards are not custom for every computer. They can be sold to anyone wanting to build their own computer"},
                             {
                                 title: "Hazardous", text: "Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. " +
@@ -138,7 +136,7 @@
             }
             document.getElementById("button" + i).classList.add("selected")
 
-            document.getElementById("pleaseSelect").setAttribute("style", "visibility:hidden")
+            document.getElementById("pleaseSelect").setAttribute("style", "display:none")
             document.getElementById("device").setAttribute("src", devices[i].src)
 
 
@@ -204,7 +202,7 @@
 
 <header id="head" class="secondary">
     <div class="container">
-        <h1>What is in Your Electronic Devices</h1>
+        <h1>What Makes Up My Electronic Devices</h1>
     </div>
 </header>
 
@@ -213,9 +211,9 @@
 
     <div class="leftcolumn">
             <ul>
-                <li><a id = "button1" class=device onclick=selectDevice(1)>Computer</a></li>
-                <li><a id = "button0" class=device onclick=selectDevice(0)>Phones</a></li>
-                <li><a id = "button2" class=device onclick=selectDevice(2)>Printer</a></li>
+                <li><a id = "button1" class=device onclick=selectDevice(1)><h4>Computer</h4></a></li>
+                <li><a id = "button0" class=device onclick=selectDevice(0)><h4>Phones</h4></a></li>
+                <li><a id = "button2" class=device onclick=selectDevice(2)><h4>Printer</h4></a></li>
             </ul>
     </div>
 

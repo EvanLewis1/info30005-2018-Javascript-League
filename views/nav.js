@@ -25,8 +25,8 @@ document.write('<div class="navbar navbar-inverse">' +
     '        <div class="navbar-collapse collapse">\n' +
     '            <ul class="nav navbar-nav pull-right mainNav">\n' +
     `                <li><a class='layoutlink fixLayout' href="index.html">Home</a></li>\n` +
-    '                <li><a class=layoutlink href="What.html">What\'s In My E-waste?</a></li>\n' +
     '                <li><a class=layoutlink href="why.html">Why Should I Care?</a></li>\n' +
+    '                <li><a class=layoutlink href="What.html">What\'s In My E-waste?</a></li>\n' +
     '                <li><a class=layoutlink href="Where.html">E-bins</a></li>\n' +
     '                <li><a class=layoutlink href="Donation.html">Donation</a></li>'+
     '                <li><a class=layoutlink href="donationSearch.html">Free Devices</a></li>'+
