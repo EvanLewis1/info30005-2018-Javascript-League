@@ -54,6 +54,7 @@ router.get('/Account', function(req, res) {
     res.send(path.join(__dirname, 'views/Account.html'));
 });
 
+router.delete("/device/:id",controller.deleteOneDevice);
 
 
 module.exports = router;

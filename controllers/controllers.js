@@ -153,8 +153,8 @@ var loadAllPosts = function(req, res){
 };
 
 var deleteOneDevice = function(req,res){
-    var postID = req.param.id;
-    Posts.remove({_id: postID}, function (err, posts) {
+    var postID = req.params.id;
+    Posts.remove({_id:postID}, function (err, posts) {
         if (!err) {
             res.send(posts);
         } else {
@@ -163,7 +163,7 @@ var deleteOneDevice = function(req,res){
     });
 };
 
-
+module.exports.deleteOneDevice = deleteOneDevice;
 module.exports.findPostsEmail = findPostsEmail;
 module.exports.updataItems = updateItems;
 module.exports.creatitem = creatitem;
