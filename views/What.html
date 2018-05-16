@@ -30,19 +30,20 @@
                         name: "Battery",
                         src: "../assets/images/phone_batteries.png",
                         qualities: [
+                            {title: "Disposal", text: "Always read the label on batteries before disposing. Batteries can cause fires if disposed of incorrectly"},
                             {title: "Hazardous", text: "The lithium-ion and nickel-metal hydride batteries contain heavy metals such as cobalt, zinc, and copper." +
                                 " Many of these chemicals are Persistent Bioaccumulative Toxins (PBTs) and have the potential to be released into the air and groundwater when burned in incinerators or disposed of in landfills, thus creating unnecessary threats to human health and the environment."},
-                            //{title: "Expensive", text: "Cobalt Price: 40.26 USD/lb\n" + "Zinc Price: 1.42 USD/lb\n" + "Copper Price: 3.08 USD/lb"},
+
                         ]
                     },
                     {
                         name: "Circuit board",
                         src: "../assets/images/circuit-board.png",
                         qualities: [
+                            {title: "Expensive", text: "Nickel Price: 6.34 USD/lb\n" + "Silver Price: 523 USD/kg\n" + "Zinc Price: 1.42 USD/lb"},
                             {title: "Hazardous", text: "Circuitry made mostly of copper is soldered to the board with protective coatings and adhesives. The board is made of epoxy resin or fibreglass and generally coated with gold plating." +
-                                " Other precious metals and hazardous substances in the PCB are arsenic (in chips made from gallium arsenide), antimony, beryllium, brominated flame retardants, cadmium, lead(used in the solder that joins the parts), nickel, palladium, silver, tantalum and zinc." +
+                                " Other precious metals and hazardous substances in the PCB are arsenic (in chips made from gallium arsenide), antimony, beryllium, brominated flame retardants, cadmium, lead, nickel, palladium, silver, tantalum and zinc." +
                                 " The lead and brominated flame retardants have the highest environmental impact due to their levels of toxicity and persistence in the environment."},
-                            //{title: "Expensive", text: "Nickel Price: 6.34 USD/lb\n" + "Silver Price: 523 USD/kg\n" + "Zinc Price: 1.42 USD/lb"},
                         ]
                     },
                     {
@@ -67,30 +68,31 @@
                         name: "Mainboard",
                         src: "../assets/images/motherboard.png",
                         qualities: [
+                            {title: "Reusable", text: "Motherboards are not custom for every computer. They can be sold to anyone wanting to build their own computer"},
                             {
                                 title: "Hazardous", text: "Motherboards and connectors often contain beryllium. Cadmium is commonly found in chip resistors, semi-conductors, infrared detectors, stabilizers, cables and wires. " +
                                 "Circuit boards, switches and relays contain mercury as well chromium. Brominated flame retardants are used in many components, including circuit boards and plastic casings. Highly possible to be a Carcinogenic substance. " +
                                 "It would cause lung injury, kidney disease and brittle bones. If it enters human bodies, the bodies will have strong allergic reaction and asthmatic bronchitis, and even cause DNA damage."
                             },
-                            //{title: "Expensive", text: "Cadmium Price: 0.6 USD/kg\n" + "Mercury Price: 0.3 USD/kg\n" + "Chromium Price: 2.80 USD/kg"},
+
                         ]
                     },
                     {
                         name: "Cpu",
                         src: "../assets/images/cpu.png",
                         qualities: [
+                            {title: "Expensive", text: "Chromium Price: 2.80 USD/kg\n" + "Lead Price: 1.06 USD/lb"},
                             {title: "Hazardous", text: "The central processing unit in a computer contains toxic substances, " +
                                 "and lead is found in circuit boards. Metal plates and housings may contain chromium, which is used to harden and protect metal plates from corrosion. "},
-                            //{title: "Expensive", text: "Chromium Price: 2.80 USD/kg\n" + "Lead Price: 1.06 USD/lb"},
                         ]
                     },
                     {
                         name: "Monitor",
                         src: "../assets/images/picture-monitor.png",
                         qualities: [
+                            {title: "Large", text: "Monitors may tend to be large and hard to dispose of, a perfect reason to donate it on our website"},
                             {title: "Hazardous", text: "Older cathode-ray tube monitors may contain up to eight pounds of lead. Newer LCD and flat-panel monitors typically don't have this much lead, but they do contain some and copper, too. " +
                                 " The lamp used to illuminate the screen is likely to contain mercury, and the coating inside the screen may be made from cadmium. Brominated flame retardants are commonly found in many monitor components."},
-                            //{title: "Expensive", text: "Copper Price: 3.08 USD/lb\n" + "Mercury Price: 0.3 USD/kg\n" + "Cadmium Price: 0.6 USD/kg"},
                         ]
                     },
                 ]
@@ -104,20 +106,20 @@
                         name: "Ink",
                         src: "../assets/images/printer3.png",
                         qualities: [
+                            {title: "Expensive", text: "Noone needs to be reminded of how expensive printer ink can be."},
                             {title: "Hazardous", text: "The primary ingredients in most printer inks are water, ethylene glycol and alcohol. Printer ink is about as safe as dish washing soap. Drinking it can make you sick, but it is not life threatening." +
                                 " If you have questions about the toxicity of a particular brand of ink, all companies publish Material Safety Data Sheets for their products. These are usually available on their websites and they will tell you what the ink contains." +
                                 " Inks used in commercial printing processes however, may contain toxic metals."},
-                            //{title: "Expensive", text: "Blah Blah Blah..."},
                         ]
                     },
                     {
                         name: "Toner",
                         src: "../assets/images/toner.png",
                         qualities: [
+                            //{title: "Expensive", text: "Blah Blah Blah..."},
                             {title: "Hazardous", text: "Laser printers use toner, a powdery substance made of electrostatically sensitive plastic particles and pigment. Some toners also contain small amounts of iron. Like printer ink, toner is generally considered non-toxic," +
                                 "though it is certainly not edible. As with inkjet inks, laser toner ingredients vary by manufacturer. Check the published Material Safety Data Sheets for specifics. While the toner itself may not be toxic, the printing process," +
                                 "which involves melting the toner onto the page can release ultra-fine particles made of volatile organic-chemical substances (VOCs). While VOCs, which are often present in paints, cleaning supplies, glues and pesticides can be toxic, laser printers emit them at very low levels."},
-                            //{title: "Expensive", text: "Blah Blah Blah..."},
                         ]
                     },
 
@@ -134,7 +136,7 @@
             }
             document.getElementById("button" + i).classList.add("selected")
 
-            document.getElementById("pleaseSelect").setAttribute("style", "visibility:hidden")
+            document.getElementById("pleaseSelect").setAttribute("style", "display:none")
             document.getElementById("device").setAttribute("src", devices[i].src)
 
 
@@ -143,12 +145,15 @@
             var image
             devices[i].components.forEach(function (component) {
 
+                imgContainer = document.createElement("div")
+                imgContainer.setAttribute("class", "imgContainer")
                 image = document.createElement("img")
                 image.setAttribute("class", "component")
                 image.src = component.src
                 image.onclick = selectComponent.bind(null, component)
 
-                components.appendChild(image)
+                imgContainer.appendChild(image)
+                components.appendChild(imgContainer)
             })
 
             //Tell user to select a component
@@ -197,7 +202,7 @@
 
 <header id="head" class="secondary">
     <div class="container">
-        <h1>What is in Your Electronic Devices</h1>
+        <h1>What Makes Up My Electronic Devices</h1>
     </div>
 </header>
 
@@ -206,14 +211,14 @@
 
     <div class="leftcolumn">
             <ul>
-                <li><a id = "button1" class=device onclick=selectDevice(1)>Computer</a></li>
-                <li><a id = "button0" class=device onclick=selectDevice(0)>Phones</a></li>
-                <li><a id = "button2" class=device onclick=selectDevice(2)>Printer</a></li>
+                <li><a id = "button1" class=device onclick=selectDevice(1)><h4>Computer</h4></a></li>
+                <li><a id = "button0" class=device onclick=selectDevice(0)><h4>Phones</h4></a></li>
+                <li><a id = "button2" class=device onclick=selectDevice(2)><h4>Printer</h4></a></li>
             </ul>
     </div>
 
     <div class="midcolumn">
-        <h1 id=pleaseSelect>SELECT A DEVICE</h1>
+        <h1 id=pleaseSelect>SELECT A DEVICE ON THE LEFT</h1>
 
         <div class="inline">
             <img id="device" src="">

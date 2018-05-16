@@ -10,12 +10,24 @@ var geocoder;
 //Focus location marker
 var FocusMarker;
 
+// Finds directions between two points
+var directionsService
+
+// Renders directions on map
+var directionsDisplay
+
+//Closest bin to focusMarker
+var closest;
+
+
 //Called when google map API loads
 function myMap() {
 
 
-    //Create Geocoder
+    //Create Services
     geocoder = new google.maps.Geocoder();
+    directionsService = new google.maps.DirectionsService();
+    directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
 
 
     //Create map
@@ -26,6 +38,8 @@ function myMap() {
     };
 
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    directionsDisplay.setMap(map);
+
 
     //Create Focus location marker
     FocusMarker = new google.maps.Marker({
@@ -33,12 +47,35 @@ function myMap() {
         title: 'Location Focus'
     });
 
+    //Open infowindow on click
+    FocusMarker.addListener('click', function () {
+
+        focuslocation = new google.maps.LatLng(FocusMarker.getPosition().lat(), FocusMarker.getPosition().lng())
+        geocoder.geocode({'location': focuslocation}, function (results, status) {
+            if (status === 'OK') {
+
+                if (FocusMarker.infowindow) {
+                    FocusMarker.infowindow.close()
+                }
+                FocusMarker.infowindow = new google.maps.InfoWindow({
+                    content: results[0].formatted_address
+                });
+
+                FocusMarker.infowindow.open(map, FocusMarker);
+
+            }
+            else {
+                console.log(status)
+            }
+        });
+    });
+
 
     //Try and get users location
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
 
-            console.log("pan to ", position)
+            console.log("pan to ", position);
 
             //Pan to User location
             map.panTo(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
@@ -55,29 +92,53 @@ function myMap() {
         console.log("User Location Permissions Blocked")
     }
 
-
     //Load Bin locations from server then run callback
     Bins.loadList(drawBins)
 }
 
+
 //Draw marker on map for each bin
 function drawBins() {
     Bins.list.forEach(function (bin) {
-        new google.maps.Marker({
-            position: new google.maps.LatLng(bin.location[0], bin.location[1]),
+
+        var binLocation = new google.maps.LatLng(bin.location[0], bin.location[1])
+
+
+        var marker = new google.maps.Marker({
+            position: binLocation,
             map: map,
             icon: {
-                url: "../assets/images/bin.png",
-                scaledSize: new google.maps.Size(20, 20),
+                url: "../assets/images/binRed.png",
+                scaledSize: new google.maps.Size(25, 25),
             },
             title: 'E-bin'
+        });
+
+        //Open infowindow on click
+        marker.addListener('click', function () {
+
+            geocoder.geocode({'location': binLocation}, function (results, status) {
+                if (status === 'OK') {
+
+
+                    var infowindow = new google.maps.InfoWindow({
+                        content: results[0].formatted_address
+                    });
+
+                    infowindow.open(map, marker);
+
+                }
+                else {
+                    alert(status)
+                }
+            });
         });
     });
 
     //Update info for where closest bin is
     getClosestBin()
-
 }
+
 
 // Pan to user input on button press
 function searchPostCode() {
@@ -85,8 +146,8 @@ function searchPostCode() {
     //Grab user input
     var address = document.getElementById("suburb")
     var postcode = document.getElementById("postcode")
-
     var input = address.value + " " + postcode.value
+
 
     //Convert user input to coordinates
     geocoder.geocode({'address': input}, function (results, status) {
@@ -97,6 +158,12 @@ function searchPostCode() {
 
             //Focus on best result
             FocusMarker.setPosition(new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng()))
+
+            //Close infowindow
+            if (FocusMarker.infowindow) {
+                FocusMarker.infowindow.close()
+            }
+
 
             //Update closest bin info
             getClosestBin()
@@ -117,7 +184,7 @@ function getClosestBin() {
     }
 
 
-    var closest;
+    closest = null;
 
     //Compare list for closest bin to focus
     Bins.list.forEach(function (bin) {
@@ -141,6 +208,8 @@ function getClosestBin() {
                 //Change displayed info
                 document.getElementById("closest").innerText = results[0].formatted_address
 
+                calcRoute()
+
             } else {
                 window.alert('No results found');
             }
@@ -148,4 +217,25 @@ function getClosestBin() {
             window.alert('Geocoder failed due to: ' + status);
         }
     })
+}
+
+//Finds and renders route from focus location to nearest recycling bin
+function calcRoute() {
+    var start = new google.maps.LatLng(FocusMarker.getPosition().lat(), FocusMarker.getPosition().lng());
+    var end = closest.loc;
+
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: 'DRIVING'
+    };
+
+    //Find directions
+    directionsService.route(request, function (result, status) {
+        if (status == 'OK') {
+
+            //Render result
+            directionsDisplay.setDirections(result);
+        }
+    });
 }

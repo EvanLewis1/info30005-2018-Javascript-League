@@ -1,66 +1,208 @@
-ul p{font-style: italic}
-body {padding-top:50px; padding-right: 50px; padding-left:50px}
-li a.inactive {color: red}
-div.layout.menu {background-color: lightgrey}
-div.frame{float: inherit; background-color: orange; border: solid black 5px; border-radius: 25px; padding-left: 25px; padding-right :25px}
+ul p {
+    font-style: italic
+}
 
-a.selected {background-color: #808080}
+body {
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px
+}
 
-nav ul li {width: 170px}
+li a.inactive {
+    color: red
+}
 
+div.layout.menu {
+    background-color: lightgrey
+}
+
+div.frame {
+    float: inherit;
+    background-color: orange;
+    border: solid black 5px;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px
+}
+
+a.selected {
+    background-color: #808080
+}
+
+nav ul li {
+    width: 170px
+}
 
 /*Why page*/
-div.whypage {padding-top: 10px; padding-left:200px; padding-right:200px}
-div.top {height: 400px; }
-div.left {width: 50%; height: 100%; float:left}
-div.right {width: 50%; height: 100%; float:right}
-div.frame img {display: block; width :400px;}
-div.left h1 {text-align: center}
-div.right h1{text-align: center}
+div.whypage {
+    padding-top: 10px;
+    padding-left: 200px;
+    padding-right: 200px
+}
 
+div.top {
+    height: 400px;
+}
 
+div.left {
+    width: 50%;
+    height: 100%;
+    float: left
+}
 
-table.full {width: 100%; height: 100%}
-td {width: 14%}
-td.active {background-color: orange}
+div.right {
+    width: 50%;
+    height: 100%;
+    float: right
+}
 
+div.frame img {
+    display: block;
+    width: 400px;
+}
+
+div.left h1 {
+    text-align: center
+}
+
+div.right h1 {
+    text-align: center
+}
+
+table.full {
+    width: 100%;
+    height: 100%
+}
+
+td {
+    width: 14%
+}
+
+td.active {
+    background-color: orange
+}
 
 /*Home page/ How page*/
-button.how {width: 100px; height: 100px; border-radius: 100px; border: 2px solid blue; font-size:25px}
-button.how:hover{
-    opacity: 0.5;}
-div.centre {margin: auto}
-div.small {width: 100px}
-div.large {width : 535px}
-.re_word {font-size: 20px; padding-left: 50px; padding-right: 50px; display: block}
-.left.how {float: left; margin-top:180px}
-.right.how{float: right; margin-top:180px}
 
-button.myBigClose {width: 50px; height: 50px; border-radius: 50px; background: url("../assets/images/close.png"); background-size: 50px; border: hidden}
-button.myBigClose:hover {opacity: 0.3}
+.halfPage {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
 
-div.popup {position: absolute; width: 900px; height: 500px; left: 300px; background-color: blue; border-radius: 10px;
-    z-index: 2;}
-div.myHidden {visibility: hidden;}
+button.how {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 2px solid blue;
+    font-size: 25px
+}
 
+button.how:hover {
+    opacity: 0.5;
+}
+
+div.centre {
+    margin: auto
+}
+
+div.small {
+    width: 100px
+}
+
+div.large {
+    width: 535px
+}
+
+.re_word {
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: block
+}
+
+.left.how {
+    float: left;
+    margin-top: 180px
+}
+
+.right.how {
+    float: right;
+    margin-top: 180px
+}
+
+button.myBigClose {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: url("../assets/images/close.png");
+    background-size: 50px;
+    border: hidden
+}
+
+button.myBigClose:hover {
+    opacity: 0.3
+}
+
+div.popup {
+    position: absolute;
+    width: 900px;
+    height: 500px;
+    left: 300px;
+    background-color: blue;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+div.myHidden {
+    visibility: hidden;
+}
+
+.largeText {
+    font-size: 30px
+}
 
 /* Why page*/
 
-div.green{background-color: #00cd00}
-div.orange{background-color: orange}
-div.blue {background-color: blue}
-div.red {background-color: #ff72c6}
-div.middle {text-align: center}
+div.green {
+    background-color: #00cd00
+}
 
+div.orange {
+    background-color: orange
+}
+
+div.blue {
+    background-color: blue
+}
+
+div.red {
+    background-color: #ff72c6
+}
+
+div.middle {
+    text-align: center
+}
 
 /*DonationsSearch*/
-.donations.list {}
+
+.donationSearch {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.donations.list {
+}
+
 tr.selectable:hover {
     background-color: #3d84e6
 }
 
+.fixLayout {
+    margin-left: -100px;
+}
 
-nav.navbar-header{
+nav.navbar-header {
     color: cornflowerblue;
 }
 
@@ -70,20 +212,27 @@ body {
 }
 
 /*What page*/
-#device{
+#device {
     width: 400px;
+    float: left;
 }
 
-#qualities > h1{
+#qualities > h1 {
     text-align: center;
 }
 
 /**/
-.component{
+.imgContainer {
+    width: 220px;
+    float: right;
+}
+
+.component {
     width: 200px;
 }
-.component:hover{
-    width:220px;
+
+.component:hover {
+    width: 220px;
 }
 
 /*
@@ -157,10 +306,11 @@ input[type=submit] {
     cursor: pointer;
 }
 
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
+
 .clear:after {
     clear: both;
     content: ".";
