@@ -109,8 +109,22 @@
                     unitLink.appendChild(para);
                 }
 
+                var postId = data[i]._id;
+                console.log("userid", postId);
+
+                var button = document.createElement("Button");
+                button.addEventListener ("click", deletepost);
+                button.innerHTML = "Delete this post";
                 var element = document.getElementsByClassName("introduce")[0];
+                button.classList.add("btn");
+
+
+                var brk1 = document.createElement('br');
+                var brk2 = document.createElement('br');
+                element.appendChild(brk1);
+                element.appendChild(brk2);
                 element.appendChild(unitLink);
+                element.appendChild(button);
                 console.log(data[i]);
             }
         }
@@ -121,6 +135,10 @@
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function deletepost(){
+        alert("Hello");
     }
 </script>
 
