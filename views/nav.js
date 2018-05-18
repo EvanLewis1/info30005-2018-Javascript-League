@@ -30,7 +30,7 @@ document.write('<div class="navbar navbar-inverse">' +
     '                <li><a class=layoutlink href="Where.html">E-bins</a></li>\n' +
     '                <li><a class=layoutlink href="Donation.html">Donation</a></li>'+
     '                <li><a class=layoutlink href="donationSearch.html">Free Devices</a></li>'+
-    '                <li><a class=layoutlink href="Personal_privacy.html">Delete Privacy</a></li>\n' +
+    '                <li><a class=layoutlink href="Personal_privacy.html">Protect Privacy</a></li>\n' +
     '                <li class="dropdown active">\n' +
     '                    <a href="Login.html" class="layoutlink dropdown-toggle" data-toggle="dropdown">Login/Account <b class="caret"></b></a>\n' +
     '                    <ul class="dropdown-menu">\n' +

@@ -113,7 +113,7 @@
                 console.log("userid", postId);
 
                 var button = document.createElement("Button");
-                button.addEventListener ("click", deletepost);
+                button.addEventListener ("click", deletepost.bind(null,postId));
                 button.innerHTML = "Delete this post";
                 var element = document.getElementsByClassName("introduce")[0];
                 button.classList.add("btn");
@@ -137,8 +137,23 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    function deletepost(){
-        alert("Hello");
+    function deletepost(postID){
+        console.log("postid", postID);
+        if (confirm("Are you sure to delete this post?")){
+            console.log("Hello");
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", '/device/'+postID, true);
+            xhr.onload = function () {
+                var users = JSON.parse(xhr.responseText);
+                if (xhr.readyState == 4 && xhr.status == "200") {
+                    console.table(users);
+                    window.location.href = "My_post.html";
+                } else {
+                    console.error(users);
+                }
+            }
+            xhr.send(null);
+        }
     }
 </script>
 
