@@ -80,6 +80,10 @@
     console.log("useremail", email);
     console.log("userid", id);
     document.getElementById("useremail").innerHTML = email;
+    if (id == ""){
+        window.location.href = "Login.html";
+        alert("Please Login first");
+    }
 
     var descrite = ['brand', 'category', 'name', 'age', 'description'];
 

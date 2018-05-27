@@ -46,6 +46,10 @@
     var data;
     var id = getCookie("username");
     console.log("UserId: ",id);
+    if (id == ""){
+        window.location.href = "Login.html";
+        alert("Please Login first");
+    }
     //var UserEmail = "Tia.Kessler@hotmail.com";
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
